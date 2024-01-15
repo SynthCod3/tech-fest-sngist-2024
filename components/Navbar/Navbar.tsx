@@ -6,11 +6,11 @@ import { NavMenu } from "./components/NavMenu";
 
 const Navbar = () => {
     return (
-        <div className="w-full px-6 h-16 flex items-center justify-between">
-            <div className="">
-				<Image src={"/logo.png"} alt={"Logo"} width={45} height={50} />
+        <div className="w-full px-6 h-20 flex items-center justify-between fixed">
+            <div className="max-w-16">
+				<Image src={"/logo.png"} alt={"Logo"} width={400} height={400} />
 			</div>
-            <div className="flex gap-12 justify-center items-center">
+            <div className="flex gap-14 justify-center items-center">
 				<NavMenu />
 				<ModeToggle />
 			</div>

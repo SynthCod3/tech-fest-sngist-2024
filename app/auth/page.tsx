@@ -1,10 +1,11 @@
-import { AuthComponent } from "./components/AuthComponent"
-
+import { AuthComponent } from "./components/AuthComponent";
 
 const Page = () => {
-  return (
-	<div><AuthComponent /></div>
-  )
-}
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <AuthComponent />
+        </div>
+    );
+};
 
-export default Page
+export default Page;

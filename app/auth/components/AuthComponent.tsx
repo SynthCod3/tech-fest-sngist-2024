@@ -10,36 +10,26 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SignIn } from "./SignIn";
 
 export function AuthComponent() {
     return (
-        <Tabs defaultValue="account" className="w-[400px]">
-            <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="account">Account</TabsTrigger>
-                <TabsTrigger value="password">Password</TabsTrigger>
+        <Tabs defaultValue="signin" className="w-[400px]">
+            <TabsList className="grid w-full grid-cols-2 h-[3.3rem] p-2">
+                <TabsTrigger value="signin" className="p-2">Sign in</TabsTrigger>
+                <TabsTrigger value="password" className="p-2">Sign up</TabsTrigger>
             </TabsList>
-            <TabsContent value="account">
+            <TabsContent value="signin">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Account</CardTitle>
-                        <CardDescription>
-                            Make changes to your account here. Click save when
-                            you&apos;re done.
+                        <CardTitle className="font-bold text-3xl text-center">Welcome back</CardTitle>
+                        <CardDescription className="text-md text-center">
+                            Let&apos;s sign you in to your account
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="name">Name</Label>
-                            <Input id="name" defaultValue="Pedro Duarte" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="username">Username</Label>
-                            <Input id="username" defaultValue="@peduarte" />
-                        </div>
+                        <SignIn />
                     </CardContent>
-                    <CardFooter>
-                        <Button>Save changes</Button>
-                    </CardFooter>
                 </Card>
             </TabsContent>
             <TabsContent value="password">

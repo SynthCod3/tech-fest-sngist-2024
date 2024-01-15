@@ -24,7 +24,7 @@ export function AuthComponent() {
                         <CardTitle>Account</CardTitle>
                         <CardDescription>
                             Make changes to your account here. Click save when
-                            you're done.
+                            you&apos;re done.
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
@@ -47,8 +47,8 @@ export function AuthComponent() {
                     <CardHeader>
                         <CardTitle>Password</CardTitle>
                         <CardDescription>
-                            Change your password here. After saving, you'll be
-                            logged out.
+                            Change your password here. After saving, you&apos;ll
+                            be logged out.
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">

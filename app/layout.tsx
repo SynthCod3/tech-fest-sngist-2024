@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/lib/theme-provider";
 import Navbar from "@/components/Navbar/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
             <body
                 className={cn(
                     "min-h-screen bg-background antialiased",
-					jakarta
+                    jakarta
                 )}
             >
                 <ThemeProvider
@@ -31,8 +32,9 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-					<Navbar />
+                    <Navbar />
                     {children}
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

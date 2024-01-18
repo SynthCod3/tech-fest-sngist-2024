@@ -1,0 +1,55 @@
+.navbarWrapper{
+	display: flex;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.logoWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	padding: .5rem 1rem;
+}
+
+.logoWrapper img {
+	height: auto;
+	width: 3rem;
+	object-fit: cover;
+}
+
+.NavbarContents {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	padding: 1rem;
+	padding-right: 2rem;
+}
+
+.NavbarContents a {
+    position: relative;
+    display: inline-block; /* Ensures the pseudo-element aligns correctly */
+	text-decoration: none;
+	color: var(--text);
+	font-weight: bold;
+}
+
+.NavbarContents a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Position it at the bottom of the link */
+    left: 0; /* Start from the left */
+    width: 0; /* Initial width is zero */
+    height: 4px; /* Height of the underline */
+    background-color: currentColor; /* Use the text color for the underline */
+    transition: width .5s ease; /* Animate the width */
+}
+
+.NavbarContents a:hover::after {
+    width: 100%; /* On hover, expand to full width */
+}

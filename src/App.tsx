@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import { Toaster } from "react-hot-toast";
+import NotFound from "./modules/NotFound";
+import Home from "./modules/Home";
+import SignIn from "./modules/Auth/SignIn";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const router = createBrowserRouter([
+        {
+            path: "*",
+            element: <NotFound />,
+        },
+        {
+            path: "/404",
+            element: <NotFound />,
+        },
+        {
+            path: "/",
+            element: <Home/>,
+        },
+        {
+            path: "/login",
+            element: <SignIn />,
+        },
+        // {
+        //     path: "/",
+        //     element: <PrivateRoute />,
+        //     children: [
+        //         {
+        //             path: "/",
+        //             element: <Dashboard />,
+        //         },
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        //         {
+        //             path: "/",
+        //             element: (
+        //                 <RoleChecker allowedRoles={[Roles.ADMIN, Roles.DC]} />
+        //             ),
+        //             children: [
+        //                 {
+        //                     path: "intern",
+        //                     element: <InternManagement />,
+        //                 },
+        //                 {
+        //                     path: "intern/:id",
+        //                     element: <Dashboard />,
+        //                 },
+        //                 {
+        //                     path: "idea",
+        //                     element: <Idea />,
+        //                 },
+        //             ],
+        //         },
+        //     ],
+        // },
+    ]);
+    return (
+        <>
+            <Toaster position="bottom-center" reverseOrder={false} />
+            <RouterProvider router={router} />
+        </>
+    );
 }
 
-export default App
+export default App;

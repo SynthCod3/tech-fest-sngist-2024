@@ -1,8 +1,13 @@
-.homeWrapper {
+.HomeWrapper {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
+
+.hero {
+	filter: drop-shadow(16px 24px 32px var(--hero));
+	
+  }
 
 .HeroWrapper {
 	display: flex;

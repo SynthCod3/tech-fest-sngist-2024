@@ -3,6 +3,7 @@
 import styles from "./index.module.css";
 // import { useEffect, useState } from "react";
 import heroImage from "../../assets/hero.svg";
+import Navbar from "../../components/Navbar";
 // import { supabase, supabaseAdmin } from "../../utils/supabase";
 
 const Home = () => {

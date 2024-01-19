@@ -29,6 +29,7 @@ const Home = () => {
     // }, []);
     return (
         <div className={styles.HomeWrapper}>
+			<Navbar />
             <div className={styles.HeroWrapper}>
                 <div className={styles.hero}>
                     <img src={heroImage} alt="no image available" />

@@ -4,9 +4,13 @@
 	--primary: #ead21f;
 	--secondary: #d64a13;
 	--background: black;
+	--foreground: white;
+	--accent: #19181885;
+	--muted: #7e7e7ea9;
 	--text: white;
 	--hero: rgba(232, 134, 14, 0.902);
 	--border-radius: 8px;
+	--border: rgba(52, 52, 52, 0.758);
 	--jakarta: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -15,9 +19,5 @@ html, body {
 	margin: 0;
 	font-family: var(--jakarta);
 	background-color: var(--background);
-	color: var(--primary);
-}
-
-.page {
-	margin-top: 4rem;
+	color: var(--foreground);
 }

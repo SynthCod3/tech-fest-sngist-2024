@@ -4,7 +4,6 @@ import { Toaster } from "react-hot-toast";
 import NotFound from "./modules/NotFound";
 import Home from "./modules/Home";
 import SignIn from "./modules/Auth/SignIn";
-import Navbar from "./components/Navbar";
 
 function App() {
     const router = createBrowserRouter([
@@ -58,11 +57,8 @@ function App() {
     ]);
     return (
         <div className="App">
-            <Navbar />
-            <div className="page">
-                <RouterProvider router={router} />
-                <Toaster position="bottom-center" reverseOrder={false} />
-            </div>
+            <RouterProvider router={router} />
+            <Toaster position="bottom-center" reverseOrder={false} />
         </div>
     );
 }

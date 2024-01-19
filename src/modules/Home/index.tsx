@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import { supabase, supabaseAdmin } from "../../utils/supabase";
+import Navbar from "../../components/Navbar";
 
 const Home = () => {
     const [data, setData] = useState<any>([]);
@@ -28,6 +29,7 @@ const Home = () => {
     }, []);
     return (
         <div className={styles.HomeWrapper}>
+			<Navbar />
             <div className={styles.HeroWrapper}>
                 <div className={styles.HeroLeft}>
                     <h1>Register Now</h1>
@@ -43,7 +45,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div>{JSON.stringify(data)}</div>
-            </div>
+            N</div>
         </div>
     );
 };

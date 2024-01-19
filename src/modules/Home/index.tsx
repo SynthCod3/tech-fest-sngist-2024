@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import heroImage from "../../assets/hero.svg";
+// import heroImage from "../../assets/hero.svg";
 import Navbar from "../../components/Navbar";
 import Flames from "./components/Flames";
 

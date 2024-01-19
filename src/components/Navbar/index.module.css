@@ -7,6 +7,15 @@
 	width: 100%;
 	justify-content: space-between;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	padding: .5rem;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	padding-left: 1rem;
 }
 
 .logoWrapper {
@@ -14,12 +23,13 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	padding: .5rem 1rem;
+	height: 4rem;
+	width: 4rem;
 }
 
 .logoWrapper img {
 	height: auto;
-	width: 3rem;
+	width: 6rem;
 	object-fit: cover;
 }
 
@@ -28,7 +38,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: 3rem;
-	padding: 1rem;
 	padding-right: 2rem;
 }
 
@@ -53,4 +62,117 @@
 
 .NavbarContents a:hover::after {
     width: 100%; /* On hover, expand to full width */
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 4rem;
+	width: 4rem;
+	cursor: pointer;
+}
+
+.profile img {
+	height: auto;
+	width: 5rem;
+	object-fit: cover;
+}
+
+
+@media screen and (max-width: 600px) {
+	.NavbarContents a {
+		display: none;
+	}
+	
+}
+
+/* NavModal CSS */
+
+.navModalWrapper {
+    position: fixed; /* Fixed position to stay in place */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.navModalContents {
+    text-align: center; /* Center the content */
+    width: 90%; /* Width of the modal */
+}
+
+.closeButton {
+    background-color: transparent;
+	color: var(--foreground);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.closeButton:hover {
+	opacity: .8;
+}
+
+.navItems {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* NavCards CSS  */
+
+.navCard {
+	display: flex;
+	flex-direction: column;
+	width: 8rem;
+	height: 8rem;
+	background-color: rgb(135, 135, 135);
+	border-radius: var(--border-radius);
+	padding: .5rem;
+	text-decoration: none;
+	color: var(--background);
+	justify-content: space-between;
+}
+
+.navCard:hover {
+	opacity: .8;
+}
+
+.navCard span {
+	font-size: 1rem;
+	text-align: right;
+	font-weight: 600;
+}
+
+.navCard div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}	
+
+.navCard div img {
+	height: auto;
+	width: 4rem;
+	object-fit: cover;
+}
+
+.navCard b {
+	font-size: 1rem;
+	font-weight: 800;
+	text-align: left;
 }

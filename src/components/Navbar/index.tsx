@@ -2,18 +2,22 @@ import styles from "./index.module.css";
 import profilePicture from "../../assets/react.svg";
 import { supabase } from "../../utils/supabase";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
-	const navigate = useNavigate();
-	async function handleClick() {
-		const session = await supabase.auth.getSession();
-		if(session.data.session?.access_token) {
-			navigate("/profile");
-		}
-		else {
-			navigate("/signin");
-		}
-	}
+    const navigate = useNavigate();
+    async function handleClick() {
+        const session = await supabase.auth.getSession();
+        if (session.data.session?.access_token) {
+            navigate("/profile");
+        } else {
+            let { error } = await supabase.auth.signOut();
+			if (error) {
+				toast.error("Error signing out:");
+			}
+            navigate("/signin");
+        }
+    }
 
     return (
         <div className={styles.navbarWrapper}>

@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import { supabase, supabaseAdmin } from "../../utils/supabase";
 import Navbar from "../../components/Navbar";
+import Flames from "./components/Flames";
 
 const Home = () => {
     const [data, setData] = useState<any>([]);
@@ -44,8 +45,10 @@ const Home = () => {
                         <Button content="Explore" variant="outline" />
                     </div>
                 </div>
-                <div>{JSON.stringify(data)}</div>
-            N</div>
+                <div>
+					<Flames />
+				</div>
+            </div>
         </div>
     );
 };

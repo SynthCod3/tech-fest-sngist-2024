@@ -7,6 +7,8 @@
 	--foreground: white;
 	--accent: #19181885;
 	--muted: #7e7e7ea9;
+	--text: white;
+	--hero: rgba(232, 134, 14, 0.902);
 	--border-radius: 8px;
 	--border: rgba(52, 52, 52, 0.758);
 	--jakarta: 'Plus Jakarta Sans', sans-serif;

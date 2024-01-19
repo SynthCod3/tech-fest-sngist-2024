@@ -46,7 +46,7 @@
     left: 0; /* Start from the left */
     width: 0; /* Initial width is zero */
     height: 4px; /* Height of the underline */
-    background-color: currentColor; /* Use the text color for the underline */
+    background-color: var(--secondary); /* Use the text color for the underline */
     transition: width .5s ease; /* Animate the width */
 }
 

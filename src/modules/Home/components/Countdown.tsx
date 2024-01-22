@@ -43,19 +43,19 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     return (
         <div className={styles.countdownWrapper}>
             <div className={styles.countdown}>
-                <span>{timeLeft.days}</span>
+                <span className={styles.number}>{timeLeft.days}</span>
                 <span>Days</span>
             </div>
             <div className={styles.countdown}>
-                <span>{timeLeft.hours}</span>
+                <span className={styles.number}>{timeLeft.hours}</span>
                 <span>Hours</span>
             </div>
             <div className={styles.countdown}>
-                <span>{timeLeft.minutes}</span>
+                <span className={styles.number}>{timeLeft.minutes}</span>
                 <span>Minutes</span>
             </div>
             <div className={styles.countdown}>
-                <span>{timeLeft.seconds}</span>
+                <span className={styles.number}>{timeLeft.seconds}</span>
                 <span>Seconds</span>
             </div>
         </div>

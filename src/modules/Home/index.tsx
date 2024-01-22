@@ -2,7 +2,7 @@ import styles from "./index.module.css";
 import Navbar from "../../components/Navbar";
 import Marquee from "./components/Marquee";
 import { HeroBgLeft, HeroBgRight } from "./components/svgComponents";
-import { CgMouse } from "react-icons/cg";
+// import { CgMouse } from "react-icons/cg";
 import Countdown from "./components/Countdown";
 
 const Home = () => {
@@ -17,10 +17,10 @@ const Home = () => {
                 </div>
                 <div className={styles.heroText}>
                     <span>WEBSYNC</span>
-                    <b>
+                    {/* <b>
                         <CgMouse />
                     </b>
-					<p>Scroll Down</p>
+					<p>Scroll Down</p> */}
                 </div>
                 <div>
                     <Countdown targetDate={date} />

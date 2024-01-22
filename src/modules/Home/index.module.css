@@ -12,6 +12,7 @@
     width: 100%;
     min-height: calc(100vh - 4rem);
     align-items: center;
+	position: relative;
 }
 
 .heroText {
@@ -21,24 +22,47 @@
     justify-content: center;
     flex-direction: column;
     z-index: 50;
-    padding-top: 2rem;
-    padding-bottom: 6rem;
-    filter: drop-shadow(16px 24px 32px var(--hero));
+    /* filter: drop-shadow(16px 24px 32px var(--hero)); */
 }
 
 .heroText span {
-    font-size: 1.2rem;
+    font-size: 28vw;
+	font-family: var(--text-heading);
     font-weight: 600;
 }
 
+.heroText b {
+	font-size: 2.5rem;
+	font-weight: 600;
+	font-family: var(--text-heading);
+	margin-bottom: 5px;
+}
+
 .heroText p {
-    font-size: 1rem;
-    margin: 0;
-    margin-top: 0.2rem;
-    text-transform: lowercase;
+	font-weight: 200;
+	margin-top: -1px;
 }
 
 .marqueeContainer {
 	width: 100%;
 	overflow: hidden;
+}
+
+.heroBgLeft {
+	position: absolute;
+	left: 18vw;
+	bottom: 0;
+}
+
+.heroBgRight {
+	position: absolute;
+	right: 18vw;
+	top: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.HeroWrapper {
+		min-height: 500px;
+	}
+	
 }

@@ -30,10 +30,14 @@ const Navbar = () => {
                 <NavModal isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
             <div className={styles.navMiddle}>
-                <b>AGNIYATHRA &apos;24</b>
+                {/* <b>AGNIYATHRA &apos;24</b> */}
+				<img src="/logo.svg" width={70} alt="Logo" />
             </div>
             <div onClick={handleClick} className={styles.profile}>
-                <img src="/profile.png" alt="Profile Picture" />
+                {/* <img src="/profile.png" alt="Profile Picture" /> */}
+				<button>
+					Sign in
+				</button>
             </div>
         </div>
     );

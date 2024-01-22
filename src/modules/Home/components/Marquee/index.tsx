@@ -4,20 +4,20 @@ const Marquee = () => {
     return (
         <div className={styles.marquee}>
             <div className={styles.marqueeGroup}>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
+                <span>Caution ✪</span>
+                <span>Tech Alert ➺</span>
+                <span>Tech Savy ✪</span>
+                <span>Workshop ✪</span>
+                <span>hello there ✪</span>
+                <span>hello there ✪</span>
             </div>
             <div className={styles.marqueeGroup} aria-hidden="true">
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
-                <span>hello there ➺</span>
+                <span>Caution ✪</span>
+                <span>Tech Alert ➺</span>
+                <span>Tech Savy ✪</span>
+                <span>Workshop ✪</span>
+                <span>hello there ✪</span>
+                <span>hello there ✪</span>
             </div>
         </div>
     );

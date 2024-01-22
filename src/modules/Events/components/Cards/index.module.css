@@ -1,0 +1,37 @@
+.cardContainer{
+    width:20vw;
+}
+
+.imageContainer{
+    border: 1px solid var(--primary);
+    object-fit: cover;
+}
+
+.contentContainer{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--primary);
+    width: 20vw;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    font-family: var(--text-body);
+    padding:3px;
+
+    color:var(--background);
+}
+
+.iconContainer{
+    display:flex;
+    flex-direction: row;
+    padding:3px;
+    gap:1vw;
+    font-weight: bold;
+    font-family: var(--text-body);
+    color:var(--background);
+}
+

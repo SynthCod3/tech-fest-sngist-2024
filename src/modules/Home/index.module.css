@@ -6,7 +6,9 @@
 
 .HeroWrapper {
     display: flex;
-    justify-content: space-around;
+    margin-top: 4rem;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     min-height: calc(100vh - 4rem);
     align-items: center;
@@ -19,37 +21,24 @@
     justify-content: center;
     flex-direction: column;
     z-index: 50;
+    padding-top: 2rem;
     padding-bottom: 6rem;
     filter: drop-shadow(16px 24px 32px var(--hero));
 }
 
-.agniyathra {
-    font-size: 7rem;
-    font-weight: 800;
-    background: -webkit-linear-gradient(#f0c3c3, var(--secondary));
-	background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.techfest {
-    font-size: 4rem;
+.heroText span {
+    font-size: 1.2rem;
     font-weight: 600;
-	opacity: .8;
 }
 
-.flames {
+.heroText p {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 0.2rem;
+    text-transform: lowercase;
+}
+
+.marqueeContainer {
+	width: 100%;
 	overflow: hidden;
-}
-
-@media screen and (max-width: 600px) {
-	.heroText {
-		padding: 1rem;
-	}
-	.agniyathra {
-		font-size: 3rem;
-	}
-	.techfest {
-		font-size: 2.3rem;
-	}
 }

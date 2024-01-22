@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
-// import heroImage from "../../assets/hero.svg";
 import Navbar from "../../components/Navbar";
-import Flames from "./components/Flames";
+import Marquee from "./components/Marquee";
 
 const Home = () => {
     return (
@@ -9,13 +8,11 @@ const Home = () => {
 			<Navbar />
             <div className={styles.HeroWrapper}>
                 <div className={styles.heroText}>
-                    {/* <img src={heroImage} alt="no image available" /> */}
-					<b className={styles.agniyathra}>AGNIYATHRA</b>
-					<b className={styles.techfest}>TECH FEST</b>
-					<b className={styles.techfest}>2024</b>
+					<span>Sree Narayana Guru Institute of Science and Technology</span>
+					<p>Presents</p>
                 </div>
-                <div className={styles.flames}>
-					<Flames />
+                <div className={styles.marqueeContainer}>
+					<Marquee />
 				</div>
             </div>
         </div>

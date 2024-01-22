@@ -26,21 +26,14 @@ const Navbar = () => {
     return (
         <div className={styles.navbarWrapper}>
             <div className={styles.menu}>
-                <CgMenuLeft onClick={() => setIsOpen(true)}/>
-				<NavModal isOpen={isOpen} setIsOpen={setIsOpen} />
+                <CgMenuLeft onClick={() => setIsOpen(true)} />
+                <NavModal isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
-            {/* <div className={styles.logoWrapper}>
-                <img src="/logo.png" alt="Logo" />
-            </div> */}
-            <div className={styles.NavbarContents}>
-                <a href={"/"}>Home</a>
-                <a href={"/hackathon"}>Hackathon</a>
-                <a href={"/competitions"}>Competitions</a>
-                <a href={"/workshops"}>Workshops</a>
-                <a href={"/contact"}>Contact</a>
-                <div onClick={handleClick} className={styles.profile}>
-                    <img src="/profile.png" alt="Profile Picture" />
-                </div>
+            <div className={styles.navMiddle}>
+                <b>AGNIYATHRA &apos;24</b>
+            </div>
+            <div onClick={handleClick} className={styles.profile}>
+                <img src="/profile.png" alt="Profile Picture" />
             </div>
         </div>
     );

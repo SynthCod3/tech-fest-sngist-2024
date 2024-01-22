@@ -6,7 +6,7 @@
 	flex-wrap: nowrap;
 	width: 100%;
 	justify-content: space-between;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 2px 12px rgba(175, 175, 175, 0.358);
 	padding: .5rem;
 }
 
@@ -15,53 +15,14 @@
 	align-items: center;
 	justify-content: center;
 	font-size: 2rem;
-	padding-left: 1rem;
+	padding: 0 1rem;
 }
 
-.logoWrapper {
+.navMiddle {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	height: 4rem;
-	width: 4rem;
-}
-
-.logoWrapper img {
-	height: auto;
-	width: 6rem;
-	object-fit: cover;
-}
-
-.NavbarContents {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 3rem;
-	padding-right: 2rem;
-}
-
-.NavbarContents a {
-    position: relative;
-    display: inline-block; /* Ensures the pseudo-element aligns correctly */
-	text-decoration: none;
-	color: var(--text);
-	font-weight: bold;
-}
-
-.NavbarContents a::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; /* Position it at the bottom of the link */
-    left: 0; /* Start from the left */
-    width: 0; /* Initial width is zero */
-    height: 4px; /* Height of the underline */
-    background-color: var(--secondary); /* Use the text color for the underline */
-    transition: width .5s ease; /* Animate the width */
-}
-
-.NavbarContents a:hover::after {
-    width: 100%; /* On hover, expand to full width */
+	font-size: 1.5rem;
 }
 
 .profile {
@@ -69,23 +30,16 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	height: 4rem;
-	width: 4rem;
+	height: 3.5rem;
+	width: 3.5rem;
 	cursor: pointer;
+	padding-right: 1rem;
 }
 
 .profile img {
 	height: auto;
 	width: 5rem;
 	object-fit: cover;
-}
-
-
-@media screen and (max-width: 600px) {
-	.NavbarContents a {
-		display: none;
-	}
-	
 }
 
 /* NavModal CSS */

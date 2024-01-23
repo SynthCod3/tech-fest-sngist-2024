@@ -3,6 +3,7 @@ import styles from "../index.module.css";
 import toast from "react-hot-toast";
 import { supabase } from "../../../utils/supabase";
 import { useNavigate } from "react-router-dom";
+import { HeroBgLeft, HeroBgRight } from "../../Home/components/svgComponents";
 
 const SignUp = () => {
     const [data, setData] = useState({
@@ -58,6 +59,10 @@ const SignUp = () => {
 
     return (
         <div className={styles.signInWrapper}>
+            <div className={styles.heroBgElements}>
+                <HeroBgLeft className={styles.heroBgLeft} />
+                <HeroBgRight className={styles.heroBgRight} />
+            </div>
             <div className={styles.signInCard}>
                 <b>Get Started</b>
                 <span>

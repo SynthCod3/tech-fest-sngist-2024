@@ -3,6 +3,8 @@ import styles from "../index.module.css";
 import toast from "react-hot-toast";
 import { supabase } from "../../../utils/supabase";
 import { useNavigate } from "react-router-dom";
+import { HeroBgLeft, HeroBgRight } from "../../Home/components/svgComponents";
+import Marquee from "../../Home/components/Marquee";
 const SignIn = () => {
     const [data, setData] = useState({
         email: "",
@@ -34,10 +36,15 @@ const SignIn = () => {
 
     return (
         <div className={styles.signInWrapper}>
+            <div className={styles.heroBgElements}>
+                <HeroBgLeft className={styles.heroBgLeft} />
+                <HeroBgRight className={styles.heroBgRight} />
+            </div>
             <div className={styles.signInCard}>
                 <b>Welcome Back</b>
                 <span>
-                    Don&apos;t have an account yet? &nbsp;<a href="/signup">Sign up</a>
+                    Don&apos;t have an account yet? &nbsp;
+                    <a href="/signup">Sign up</a>
                 </span>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <input

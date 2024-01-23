@@ -84,3 +84,19 @@ input:-webkit-autofill:active {
     margin-top: 0.5rem;
     border: 1px solid var(--primary);
 }
+
+.heroBgElements {
+	overflow: hidden;
+}
+
+.heroBgLeft {
+	position: absolute;
+	left: 18vw;
+	bottom: 0;
+}
+
+.heroBgRight {
+	position: absolute;
+	right: 18vw;
+	top: 0;
+}

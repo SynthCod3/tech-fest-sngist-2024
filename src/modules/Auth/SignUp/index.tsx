@@ -72,6 +72,12 @@ const SignUp = () => {
     return (
         <div className={styles.signInWrapper}>
             <div className={styles.heroBgElements}>
+                <img
+                    src="/logo.svg"
+                    width={70}
+                    alt="Logo"
+                    onClick={() => navigate("/")}
+                />
                 <HeroBgLeft className={styles.heroBgLeft} />
                 <HeroBgRight className={styles.heroBgRight} />
             </div>

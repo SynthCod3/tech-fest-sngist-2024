@@ -101,3 +101,10 @@ input:-webkit-autofill:active {
 	right: 18vw;
 	top: 0;
 }
+
+.heroBgElements img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 100;
+}

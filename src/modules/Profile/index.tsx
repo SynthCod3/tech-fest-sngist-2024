@@ -1,6 +1,8 @@
 import toast from "react-hot-toast";
 import { supabase } from "../../utils/supabase";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import styles from "./index.module.css"
 
 const Profile = () => {
 	const navigate = useNavigate();
@@ -15,7 +17,8 @@ const Profile = () => {
 	}
 
     return (
-        <div>
+        <div className={styles.profileWrapper}>
+			<Navbar />
 			<div>
 				<button onClick={handleLogout}>Logout</button>
 			</div>

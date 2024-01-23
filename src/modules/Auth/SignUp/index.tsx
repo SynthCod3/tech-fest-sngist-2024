@@ -15,7 +15,27 @@ const SignUp = () => {
         department: "",
         phone: "",
     });
-	const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    const handleSignUp = async () => {
+        let { data: res, error } = await supabase.auth.signUp({
+            email: data.email,
+            password: data.password,
+            options: {
+                data: {
+                    name: data.name,
+                    phone: data.phone,
+                    college: data.college,
+                    department: data.department,
+                },
+            },
+        });
+        if (error) {
+            throw error.message;
+        } else {
+            return res;
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -28,33 +48,25 @@ const SignUp = () => {
             return;
         }
 
-		if (data.password !== data.passwordConfirm) {
-			toast.error("Passwords do not match");
-			return;
-		}
+        if (data.password !== data.passwordConfirm) {
+            toast.error("Passwords do not match");
+            return;
+        }
 
-		if (data.phone.length !== 10) {
-			toast.error("Phone number must be 10 digits");
-		}
+        if (data.phone.length !== 10) {
+            toast.error("Phone number must be 10 digits");
+        }
 
-        const { data: _res, error } = await supabase.auth.signUp({
-            email: data.email,
-            password: data.password,
-            options: {
-                data: {
-                    name: data.name,
-					phone: data.phone,
-                    college: data.college,
-					department: data.department,
-                },
+        toast.promise(handleSignUp(), {
+            loading: "Signing up...",
+            success: () => {
+                navigate("/profile");
+                return <b>Signed up successfully</b>;
+            },
+            error: (error) => {
+                return <b>{error}</b>;
             },
         });
-        if (error) {
-            toast.error(error.message);
-        } else {
-            toast.success("Sign up successful");
-			navigate("/profile");
-        }
     };
 
     return (

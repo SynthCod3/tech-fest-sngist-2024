@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { supabase } from "../../../utils/supabase";
 import { useNavigate } from "react-router-dom";
 import { HeroBgLeft, HeroBgRight } from "../../Home/components/svgComponents";
-import Marquee from "../../Home/components/Marquee";
+
 const SignIn = () => {
     const [data, setData] = useState({
         email: "",
@@ -12,10 +12,21 @@ const SignIn = () => {
     });
     const navigate = useNavigate();
 
+	const handleSignIn = async () => {
+		let { data: res, error } = await supabase.auth.signInWithPassword(
+            data
+        );
+        if (error) {
+            throw error.message
+        } else {
+            return res
+        }
+	}
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-		const isAnyFieldEmpty = Object.values(data).some(
+        const isAnyFieldEmpty = Object.values(data).some(
             (value) => value.trim() === ""
         );
         if (isAnyFieldEmpty) {
@@ -23,15 +34,17 @@ const SignIn = () => {
             return;
         }
 
-        let { data: _res, error } = await supabase.auth.signInWithPassword(
-            data
-        );
-        if (error) {
-            toast.error(error.message);
-        } else {
-            toast.success("Signed in successfully");
-            navigate("/profile");
-        }
+        toast.promise(handleSignIn(), {
+            loading: "Signing in...",
+            success: () => {
+                navigate("/profile");
+                return <b>Signed in successfully</b>;
+            },
+            error: (error) => {
+                return <b>{error}</b>;
+            },
+        });
+        
     };
 
     return (

@@ -1,5 +1,4 @@
 import styles from './index.module.css';
-import { FaInstagram } from "react-icons/fa";
 import { GiClick } from "react-icons/gi";
 
 const Cards = () => {
@@ -7,16 +6,14 @@ const Cards = () => {
     <div >
         <div className={styles.cardContainer}>
             <div className={styles.imageContainer}>
-                <img src="https://marketplace.canva.com/EAFIJeGhxQY/1/0/1131w/canva-red-and-black-calendar-of-events-upcoming-music-concert-poster-CKoCWAo0JRM.jpg" width="305px"  alt="no image avilable"/>
+                <img src="https://euphoriaofbreakdown.files.wordpress.com/2018/12/img_9027.jpg?w=1080"   alt="no image avilable"/>
             </div>
             <div className={styles.contentContainer}>
                 <div className={styles.content}>
                     <span>Event name</span>
-                    <span>Event description</span>
                 </div>
                 <div className={styles.iconContainer}>
-                    <span><FaInstagram /></span>
-                    <span><GiClick /></span>
+                    <button ><GiClick /> <span>VIEW</span></button>
                 </div>
             </div>
         </div>

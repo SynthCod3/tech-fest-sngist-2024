@@ -5,6 +5,7 @@ import NotFound from "./modules/NotFound";
 import Home from "./modules/Home";
 import SignIn from "./modules/Auth/SignIn";
 import SignUp from "./modules/Auth/SignUp";
+import Events from "./modules/Events";
 
 function App() {
     const router = createBrowserRouter([
@@ -19,6 +20,10 @@ function App() {
         {
             path: "/",
             element: <Home />,
+        },
+        {
+            path: "/events",
+            element: <Events />,
         },
         {
             path: "/signin",

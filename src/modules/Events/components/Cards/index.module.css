@@ -1,37 +1,60 @@
 .cardContainer{
-    width:20vw;
+    width:13rem;
+    margin-top: 1rem;
 }
 
 .imageContainer{
     border: 1px solid var(--primary);
-    object-fit: cover;
+    width: 13rem;
+}
+
+.imageContainer img{
+    object-fit: contain;
+    width: 100%;
+
 }
 
 .contentContainer{
     display:flex;
     justify-content: space-between;
     background-color: var(--primary);
-    width: 20vw;
-    margin-top: 2px;
+    width: 13.1rem;
+    margin-top: 3px;
     font-weight: bold;
 }
 
 .content{
     display:flex;
     flex-direction: column;
+    justify-content: center;
     font-family: var(--text-body);
     padding:3px;
-
     color:var(--background);
 }
 
-.iconContainer{
+.iconContainer {
     display:flex;
     flex-direction: row;
-    padding:3px;
+    padding:4px;
     gap:1vw;
-    font-weight: bold;
-    font-family: var(--text-body);
-    color:var(--background);
+   
 }
 
+.iconContainer button {
+	background-color: transparent;
+	border: .5px dotted var(--background);
+	color: var(--background);
+	font-family: var(--text-body);
+	border-radius: var(--border-radius) 0 var(--border-radius) 0;
+	font-size: 1.1rem;
+}
+
+.iconContainer button:hover {
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+.iconContainer button span{
+    font-family: var(--text-body);
+    font-size: .8rem;
+}

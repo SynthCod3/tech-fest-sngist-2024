@@ -6,11 +6,13 @@ import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
+import { User } from "@supabase/supabase-js";
 
 const Profile = () => {
     const navigate = useNavigate();
     const [data, setData] = useState<UserEvent[]>([]);
     const [day, setDay] = useState(1);
+	const [user, setUser] = useState<User>();
 
     const handleLogout = async () => {
         toast.promise(supabase.auth.signOut(), {
@@ -20,6 +22,15 @@ const Profile = () => {
         });
         navigate("/signin");
     };
+
+    async function fetchUser() {
+        const {
+            data: { user },
+        } = await supabase.auth.getUser();
+		if (user) {
+			setUser(user);
+		}
+    }
 
     async function fetchData() {
         let userId = JSON.parse(localStorage.getItem("user") as string);
@@ -40,6 +51,7 @@ const Profile = () => {
 
     useEffect(() => {
         fetchData();
+		fetchUser();
     }, []);
 
     return (
@@ -49,7 +61,7 @@ const Profile = () => {
                 <div className={styles.logoutWrapper}>
                     <div onClick={handleLogout}>Logout</div>
                 </div>
-                {data.length > 0 ? (
+                {user?.id ? (
                     <div className={styles.profileCard}>
                         <div className={styles.cardTop}>
                             <span className={styles.cardTopTitle}>
@@ -67,9 +79,9 @@ const Profile = () => {
                             </div>
                             <div className={styles.cardProfileDetails}>
                                 <b>
-                                    {data[0].user_view.raw_user_meta_data.name}
+                                    {user.user_metadata.name}
                                 </b>
-                                <span>{data[0].user_view.email}</span>
+                                <span>{user.email}</span>
                             </div>
                         </div>
                         <div className={styles.cardEventsWrapper}>

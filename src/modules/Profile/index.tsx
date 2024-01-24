@@ -4,12 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
-import { User } from "@supabase/supabase-js";
 import Loader from "../../components/Loader";
 
 const Profile = () => {
     const navigate = useNavigate();
-	const [data, setData] = useState<User>();
+	const [data, setData] = useState<UserEvent[]>([]);
 
     const handleLogout = async () => {
         toast.promise(supabase.auth.signOut(), {
@@ -20,21 +19,27 @@ const Profile = () => {
         navigate("/signin");
     };
 
-    const fetchProfile = async () => {
-        const {
-            data: { user },
-        } = await supabase.auth.getUser();
-		if(user) {
-			setData(user);
-		}
-		else {
-			throw new Error("No user found");
-		}
-    };
+    async function fetchData() {
+		let userId = JSON.parse(localStorage.getItem("user") as string);
+        let { data: user, error } = await supabase
+            .from("event_user_link")
+            .select(
+                "user_id, event_id, events(name, date), user_view(email, raw_user_meta_data)"
+            )
+            // Filters
+            .eq("user_id", userId.user.id);
+        if (user) {
+            console.log(user);
+			setData(user as unknown as UserEvent[]);
+            return user;
+        } else if (error) {
+            throw error;
+        }
+    }
 
-	useEffect(() => {
-		fetchProfile();
-	}, []);
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <div className={styles.profileWrapper}>
@@ -42,7 +47,7 @@ const Profile = () => {
             <div className={styles.logoutWrapper}>
                 <div onClick={handleLogout}>Logout</div>
             </div>
-            {data?.user_metadata ? (
+            {data.length > 0 ? (
                 <div className={styles.profileCard}>
                     <div className={styles.cardTop}>
                         <span className={styles.cardTopTitle}>
@@ -56,8 +61,8 @@ const Profile = () => {
                             <img src="/ghostboi.webp" alt="Profile Picture" />
                         </div>
                         <div className={styles.cardProfileDetails}>
-                            <b>{data?.user_metadata?.name}</b>
-                            <span>{data?.email}</span>
+                            <b>{data[0].user_view.raw_user_meta_data.name}</b>
+                            <span>{data[0].user_view.email}</span>
                         </div>
                     </div>
                     <div className={styles.cardEventsWrapper}>

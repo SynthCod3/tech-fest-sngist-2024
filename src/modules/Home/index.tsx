@@ -4,9 +4,10 @@ import Marquee from "./components/Marquee";
 import { HeroBgLeft, HeroBgRight } from "./components/svgComponents";
 // import { CgMouse } from "react-icons/cg";
 import Countdown from "./components/Countdown";
+import Footer from "../../components/Footer";
 
 const Home = () => {
-    const date = new Date('2024-02-01T12:00:00');
+    const date = new Date('2024-02-24T12:00:00');
     return (
         <div className={styles.HomeWrapper}>
             <Navbar />
@@ -17,10 +18,6 @@ const Home = () => {
                 </div>
                 <div className={styles.heroText}>
                     <span>WEBSYNC</span>
-                    {/* <b>
-                        <CgMouse />
-                    </b>
-					<p>Scroll Down</p> */}
                 </div>
                 <div>
                     <Countdown targetDate={date} />
@@ -29,6 +26,7 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
+			<Footer />
         </div>
     );
 };

@@ -6,6 +6,8 @@ import Home from "./modules/Home";
 import SignIn from "./modules/Auth/SignIn";
 import SignUp from "./modules/Auth/SignUp";
 import Events from "./modules/Events";
+import Profile from "./modules/Profile";
+import { PrivateRoute } from "./services/PrivateRoute";
 
 function App() {
     const router = createBrowserRouter([
@@ -33,37 +35,37 @@ function App() {
             path: "/signup",
             element: <SignUp />,
         },
-        // {
-        //     path: "/",
-        //     element: <PrivateRoute />,
-        //     children: [
-        //         {
-        //             path: "/",
-        //             element: <Dashboard />,
-        //         },
+        {
+            path: "/",
+            element: <PrivateRoute />,
+            children: [
+                {
+                    path: "/profile",
+                    element: <Profile />,
+                },
 
-        //         {
-        //             path: "/",
-        //             element: (
-        //                 <RoleChecker allowedRoles={[Roles.ADMIN, Roles.DC]} />
-        //             ),
-        //             children: [
-        //                 {
-        //                     path: "intern",
-        //                     element: <InternManagement />,
-        //                 },
-        //                 {
-        //                     path: "intern/:id",
-        //                     element: <Dashboard />,
-        //                 },
-        //                 {
-        //                     path: "idea",
-        //                     element: <Idea />,
-        //                 },
-        //             ],
-        //         },
-        //     ],
-        // },
+                // {
+                //     path: "/",
+                //     element: (
+                //         <RoleChecker allowedRoles={[Roles.ADMIN, Roles.DC]} />
+                //     ),
+                //     children: [
+                //         {
+                //             path: "intern",
+                //             element: <InternManagement />,
+                //         },
+                //         {
+                //             path: "intern/:id",
+                //             element: <Dashboard />,
+                //         },
+                //         {
+                //             path: "idea",
+                //             element: <Idea />,
+                //         },
+                //     ],
+                // },
+            ],
+        },
     ]);
     return (
         <div className="App">

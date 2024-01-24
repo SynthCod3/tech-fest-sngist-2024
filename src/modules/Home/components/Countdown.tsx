@@ -58,6 +58,10 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
                 <span className={styles.number}>{timeLeft.seconds}</span>
                 <span>Seconds</span>
             </div>
+			<div className={styles.date}>
+				<b>February</b>
+				<span>26, 27</span>
+			</div>
         </div>
     );
 };

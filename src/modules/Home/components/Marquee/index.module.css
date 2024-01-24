@@ -4,8 +4,8 @@
     height: 3vh;
     user-select: none;
     gap: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     background-color: var(--foreground);
     /* transform: skewY(-3deg); */
     /* transform: rotate(-5deg) translateY(-30px) translateX(-10px); */
@@ -34,10 +34,11 @@
 
 .marqueeGroup span {
     color: var(--background);
-    font-size: 2vw;
+    font-size: 1.6vw;
+	letter-spacing: -1px;
     font-weight: 800;
     white-space: nowrap;
-    font-family: "Syne", sans-serif !important;
+    font-family: var(--text-body)
     /*text-transform: uppercase;*/
 }
 

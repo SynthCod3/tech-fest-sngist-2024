@@ -3,6 +3,7 @@ import styles from "../index.module.css";
 import toast from "react-hot-toast";
 import { supabase } from "../../../utils/supabase";
 import { useNavigate } from "react-router-dom";
+import { HeroBgLeft, HeroBgRight } from "../../Home/components/svgComponents";
 
 const SignUp = () => {
     const [data, setData] = useState({
@@ -14,7 +15,28 @@ const SignUp = () => {
         department: "",
         phone: "",
     });
-	const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    const handleSignUp = async () => {
+        let { data: res, error } = await supabase.auth.signUp({
+            email: data.email,
+            password: data.password,
+            options: {
+                data: {
+                    name: data.name,
+                    phone: data.phone,
+                    college: data.college,
+                    department: data.department,
+                },
+            },
+        });
+        if (error) {
+            throw error.message;
+        } else {
+			localStorage.setItem("user", JSON.stringify(res.session));
+            return res;
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -27,37 +49,39 @@ const SignUp = () => {
             return;
         }
 
-		if (data.password !== data.passwordConfirm) {
-			toast.error("Passwords do not match");
-			return;
-		}
+        if (data.password !== data.passwordConfirm) {
+            toast.error("Passwords do not match");
+            return;
+        }
 
-		if (data.phone.length !== 10) {
-			toast.error("Phone number must be 10 digits");
-		}
+        if (data.phone.length !== 10) {
+            toast.error("Phone number must be 10 digits");
+        }
 
-        const { data: _res, error } = await supabase.auth.signUp({
-            email: data.email,
-            password: data.password,
-            options: {
-                data: {
-                    name: data.name,
-					phone: data.phone,
-                    college: data.college,
-					department: data.department,
-                },
+        toast.promise(handleSignUp(), {
+            loading: "Signing up...",
+            success: () => {
+                navigate("/profile");
+                return <b>Signed up successfully</b>;
+            },
+            error: (error) => {
+                return <b>{error}</b>;
             },
         });
-        if (error) {
-            toast.error(error.message);
-        } else {
-            toast.success("Sign up successful");
-			navigate("/profile");
-        }
     };
 
     return (
         <div className={styles.signInWrapper}>
+            <div className={styles.heroBgElements}>
+                <img
+                    src="/logo.svg"
+                    width={70}
+                    alt="Logo"
+                    onClick={() => navigate("/")}
+                />
+                <HeroBgLeft className={styles.heroBgLeft} />
+                <HeroBgRight className={styles.heroBgRight} />
+            </div>
             <div className={styles.signInCard}>
                 <b>Get Started</b>
                 <span>

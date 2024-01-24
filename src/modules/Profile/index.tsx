@@ -9,6 +9,7 @@ import Loader from "../../components/Loader";
 const Profile = () => {
     const navigate = useNavigate();
 	const [data, setData] = useState<UserEvent[]>([]);
+	const [day, setDay] = useState(1);
 
     const handleLogout = async () => {
         toast.promise(supabase.auth.signOut(), {
@@ -20,17 +21,16 @@ const Profile = () => {
     };
 
     async function fetchData() {
-		let userId = JSON.parse(localStorage.getItem("user") as string);
+        let userId = JSON.parse(localStorage.getItem("user") as string);
         let { data: user, error } = await supabase
             .from("event_user_link")
             .select(
-                "user_id, event_id, events(name, date), user_view(email, raw_user_meta_data)"
+                "user_id, event_id, payment, events(name, date, category), user_view(email, raw_user_meta_data)"
             )
             // Filters
             .eq("user_id", userId.user.id);
         if (user) {
-            console.log(user);
-			setData(user as unknown as UserEvent[]);
+            setData(user as unknown as UserEvent[]);
             return user;
         } else if (error) {
             throw error;
@@ -67,15 +67,46 @@ const Profile = () => {
                     </div>
                     <div className={styles.cardEventsWrapper}>
                         <div className={styles.cardEventsDays}>
-                            <span>DAY #1</span>
-                            <span>DAY #2</span>
+                            <span
+                                onClick={() => setDay(1)}
+                                className={`${
+                                    day === 1 ? styles.selectedDay : ""
+                                }`}
+                            >
+                                DAY #1
+                            </span>
+                            <span
+                                onClick={() => setDay(2)}
+                                className={`${
+                                    day === 2 ? styles.selectedDay : ""
+                                }`}
+                            >
+                                DAY #2
+                            </span>
                         </div>
                         <div className={styles.cardEventsList}>
                             <b>REGISTERED EVENTS</b>
-                            <span>1. Workshop &lt;AI&gt;</span>
-                            <span>2. Hackathon &lt;Web&gt;</span>
-                            <span>3. Competition &lt;Blind Coding&gt;</span>
-                            <span>4. Workshop &lt;Web&gt;</span>
+                            {data.some((event) => event.events.date === day) ? (
+                                data.map((event, index) => {
+                                    if (event.events.date === day) {
+                                        return (
+                                            <span key={index}>
+                                                {index + 1}.{" "}
+                                                {event.events.category} &lt;
+                                                {event.events.name}&gt;
+                                                <span>
+                                                    {event.payment
+                                                        ? ""
+                                                        : " <Payment pending>"}
+                                                </span>
+                                            </span>
+                                        );
+                                    }
+                                    return null;
+                                })
+                            ) : (
+                                <span>No events</span>
+                            )}
                         </div>
                     </div>
                     <div className={styles.cardFooter}>

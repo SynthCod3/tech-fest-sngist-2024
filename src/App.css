@@ -15,6 +15,7 @@
 	--border-light: rgba(255, 255, 255, 0.2);
 	--text-heading: 'Karantina', system-ui;
 	--text-body: 'Josefin Sans', sans-serif;
+	--danger: #c33333;
 }
 
 html, body {

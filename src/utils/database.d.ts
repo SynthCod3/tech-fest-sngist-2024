@@ -12,11 +12,14 @@ interface UserView {
 
 interface Event {
     name: string;
+	date: number;
+	category: string;
 }
 
 interface UserEvent {
     user_id: string;
     event_id: string;
+	payment: boolean;
     events: Event;
     user_view: UserView;
 }

@@ -109,7 +109,7 @@
 	border-left: none;
 }
 
-.cardEventsWrapper .cardEventsDays span:hover {
+.cardEventsWrapper .cardEventsDays span:hover, .selectedDay {
 	background-color: var(--primary);
 	color: var(--background);
 }
@@ -122,6 +122,14 @@
 
 .cardEventsList b {
 	padding-bottom: .5rem;
+}
+
+.cardEventsList span {
+	text-transform: capitalize;
+}
+
+.cardEventsList span span {
+	color: var(--danger);
 }
 
 .cardFooter {

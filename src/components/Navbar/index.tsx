@@ -41,11 +41,18 @@ const Navbar = () => {
             </div>
             <div className={styles.navMiddle}>
                 {/* <b>AGNIYATHRA &apos;24</b> */}
-                <img src="/logo.svg" width={70} alt="Logo" onClick={() => navigate("/")}/>
+                <img
+                    src="/logo.svg"
+                    width={70}
+                    alt="Logo"
+                    onClick={() => navigate("/")}
+                />
             </div>
             <div onClick={handleClick} className={styles.profile}>
                 {profile ? (
-                    <img src="/ghostboi.webp" alt="Profile Picture" />
+                    <div className={styles.profilePic} title="Profile">
+                        <img src="/ghostboi.webp" alt="Profile Picture" />
+                    </div>
                 ) : (
                     <button>Sign in</button>
                 )}

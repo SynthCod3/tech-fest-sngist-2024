@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { supabase } from "../../utils/supabase";
+import Navbar from "../../components/Navbar"
+import { HeroBgLeft, HeroBgRight } from "../Home/components/svgComponents"
 import Cards from "./components/Cards";
 import styles from "./index.module.css";
 const Events = () => {

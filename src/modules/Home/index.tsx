@@ -6,7 +6,7 @@ import { HeroBgLeft, HeroBgRight } from "./components/svgComponents";
 import Countdown from "./components/Countdown";
 
 const Home = () => {
-    const date = new Date('2024-02-01T12:00:00');
+    const date = new Date('2024-02-24T12:00:00');
     return (
         <div className={styles.HomeWrapper}>
             <Navbar />
@@ -17,10 +17,6 @@ const Home = () => {
                 </div>
                 <div className={styles.heroText}>
                     <span>WEBSYNC</span>
-                    {/* <b>
-                        <CgMouse />
-                    </b>
-					<p>Scroll Down</p> */}
                 </div>
                 <div>
                     <Countdown targetDate={date} />

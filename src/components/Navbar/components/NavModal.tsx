@@ -11,7 +11,7 @@ type Props = {
 const NavModal = (props: Props) => {
     return (
         props.isOpen && (
-            <div className={styles.navModalWrapper}>
+            <div className={styles.navModalWrapper} onClick={() => props.setIsOpen(false)}>
                 <div className={styles.navModalContents}>
                     <button
                         className={styles.closeButton}

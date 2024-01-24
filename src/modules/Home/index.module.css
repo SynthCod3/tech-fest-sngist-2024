@@ -111,3 +111,15 @@
 .countdownWrapper .date b {
 	font-size: 1.2rem;
 }
+
+@media screen and (max-width: 600px) {
+	.countdownWrapper .date span {
+		font-size: 2rem;
+	}
+	.countdown {
+		font-size: .7rem;
+	}
+	.countdown .number {
+		font-size: 2.5rem;
+	}
+}

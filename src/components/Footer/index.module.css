@@ -1,0 +1,67 @@
+.footerWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+	background-color: var(--foreground);
+	color: var(--background);
+	font-family: var(--inter);
+	gap: 2rem;
+	padding-bottom: 3rem;
+}
+
+.logoContainer {
+	display: flex;
+	width: 100%;
+	justify-content: start;
+}
+
+.logoContainer img {
+	width: 3.5rem;
+	mix-blend-mode: difference !important;
+	cursor: pointer;
+}
+
+.footerContent {
+	display: flex;
+	justify-content: start;
+	flex-wrap: wrap;
+	width: 95%;
+	gap: 3rem;
+}
+
+.footerContent .footerLinks {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	gap: 0.2rem;
+	align-items: start;
+}
+
+.footerContent .footerLinks b {
+	font-size: 1.1rem;
+	font-weight: 800;
+	margin-bottom: .4rem;
+}
+
+.footerContent .footerLinks a {
+	text-decoration: none;
+	color: var(--accent);
+}
+
+.footerLinks a:hover {
+	text-decoration: underline;
+	color: var(--background);
+}
+
+.footerLinks div {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	font-size: 1.2rem;
+}
+
+.footerLinks div a:last-child {
+	margin-right: 20vw;
+}

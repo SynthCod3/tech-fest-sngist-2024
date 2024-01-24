@@ -4,6 +4,7 @@ import Marquee from "./components/Marquee";
 import { HeroBgLeft, HeroBgRight } from "./components/svgComponents";
 // import { CgMouse } from "react-icons/cg";
 import Countdown from "./components/Countdown";
+import Footer from "../../components/Footer";
 
 const Home = () => {
     const date = new Date('2024-02-24T12:00:00');
@@ -25,6 +26,7 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
+			<Footer />
         </div>
     );
 };

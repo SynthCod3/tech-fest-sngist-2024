@@ -1,41 +1,7 @@
-.HeroWrapper {
+.eventContainer{
     display: flex;
-    margin-top: 4rem;
-    flex-direction: column;
-    width: 100%;
-    min-height: calc(100vh - 4rem);
-    align-items: center;
-	position: relative;
-}
-
-.heroBgLeft {
-	position: absolute;
-	left: 18vw;
-	bottom: 0;
-}
-
-.heroBgRight {
-	position: absolute;
-	right: 18vw;
-	top: 0;
-}
-
-@media screen and (max-width: 600px) {
-	.HeroWrapper {
-		min-height: 500px;
-	}
-	
-}
-.heroText span {
-    font-size: 4vw;
-	font-family: var(--text-heading);
-    font-weight: 400;
-    display: flex;
-    margin-top:2rem;
-    align-items: center;
-}
-
-.cardContainer{
-    display: flex;
-    
+    flex-direction: row;
+    gap:3rem;
+    justify-content: center;
+    align-items: baseline;
 }

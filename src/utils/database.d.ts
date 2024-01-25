@@ -14,6 +14,8 @@ interface Event {
     name: string;
 	date: number;
 	category: string;
+    id: string;
+    image:string;
 }
 
 interface UserEvent {

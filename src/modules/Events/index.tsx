@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { supabase } from "../../utils/supabase";
 import Cards from "./components/Cards";
 import styles from "./index.module.css";
+import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 
 const Events = () => {
     async function fetchData() {
@@ -25,11 +27,16 @@ const Events = () => {
     }, []);
 
     return (
-        <div>
-            <div className={styles.eventContainer}>
-                <Cards />
+        <>
+            <Navbar />
+            <Header title="Events" />
+            <div className={styles.eventsWrapper}>
+                <div className={styles.eventContainer}>
+                    {/* <Cards /> */}
+                    He
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

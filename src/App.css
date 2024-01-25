@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Karantina&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
 
 /* font-family: 'Josefin Sans', sans-serif; */
 /* font-family: 'Karantina', system-ui; */
 /* font-family: 'Inter', sans-serif; */
+/* font-family: 'Chakra Petch', sans-serif; */
 
 :root {
 	--primary: #ffffff;
@@ -19,6 +21,7 @@
 	--text-body: 'Josefin Sans', sans-serif;
 	--danger: #c33333;
 	--inter: 'Inter', sans-serif;
+	--chakra: 'Chakra Petch', sans-serif;
 }
 
 html, body {

@@ -1,7 +1,7 @@
-.eventsWrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 5rem;
+.eventContainer{
+    display: flex;
+    flex-direction: row;
+    gap:3rem;
+    justify-content: center;
+    align-items: baseline;
 }

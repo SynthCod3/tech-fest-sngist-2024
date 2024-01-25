@@ -1,60 +1,56 @@
-.cardContainer{
-    width:13rem;
-    margin-top: 1rem;
+.cardContainer {
+   width: 12rem;
+   overflow: auto;
+   position: relative;
+   background-color: white;
 }
 
-.imageContainer{
-    border: 1px solid var(--primary);
-    width: 13rem;
+.imageContainer {
+    width: 100%; 
+    object-fit: cover;
 }
 
-.imageContainer img{
-    object-fit: contain;
-    width: 100%;
-
+.imageContainer img {
+    width: 100%; 
+    height: auto; 
 }
 
-.contentContainer{
-    display:flex;
-    justify-content: space-between;
-    background-color: var(--primary);
-    width: 13.1rem;
-    margin-top: 3px;
-    font-weight: bold;
-}
-
-.content{
+.contentContainer {
+    text-align: center; 
+    margin-top: 5px;
+    color: var(--background);
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    font-family: var(--text-body);
-    padding:3px;
-    color:var(--background);
+    margin-bottom: 6px;
 }
 
-.iconContainer {
-    display:flex;
-    flex-direction: row;
-    padding:4px;
-    gap:1vw;
-   
+.content {
+    margin-bottom: 5px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.content span:first-child{
+    text-transform: uppercase;
+}
+
+.content span:last-child{
+    font-size: .2rem;
+    font-weight: 350;
 }
 
 .iconContainer button {
-	background-color: transparent;
-	border: .5px dotted var(--background);
-	color: var(--background);
+	padding: .1rem;
+	background-color: var(--background);
+    width: 85%;
+	border: 1px solid var(--background);
+	color: var(--foreground);
 	font-family: var(--text-body);
-	border-radius: var(--border-radius) 0 var(--border-radius) 0;
-	font-size: 1.1rem;
+	border-radius:0 var(--border-radius) 0 var(--border-radius) ;
+	font-size: .8em;
 }
 
 .iconContainer button:hover {
-	background-color: var(--background);
-	color: var(--foreground);
-}
-
-.iconContainer button span{
-    font-family: var(--text-body);
-    font-size: .8rem;
+	background-color: var(--foreground);
+	color: var(--background);
 }

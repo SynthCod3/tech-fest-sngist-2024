@@ -2,6 +2,7 @@ import { BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import styles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
 import ScrambleText from "../ScrambleText";
+
 const Footer = () => {
 	const navigate = useNavigate();
     return (

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../utils/supabase";
-import Cards from "./components/Cards";
 import styles from "./index.module.css";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Loader from "../../components/Loader";
 import Button from "../../components/Button";
+import Card from "../../components/Card";
 
 const Events = () => {
     const [data, setData] = useState<Event[]>([]);
@@ -29,15 +29,21 @@ const Events = () => {
             <Navbar />
             <Header title="Events" />
             <div className={styles.eventsWrapper}>
-				<div className={styles.filters}>
-					<Button text="ALL" />
-					<Button text="HACKATHON" />
-					<Button text="WORKSHOP" />
-					<Button text="COMPETITION" />
-				</div>
+                <div className={styles.filters}>
+                    <Button text="ALL" />
+                    <Button text="HACKATHON" />
+                    <Button text="WORKSHOP" />
+                    <Button text="COMPETITION" />
+                </div>
                 <div className={styles.eventContainer}>
                     {data.length > 0 ? (
-                        data.map((event) => <Cards key={event.id} {...event} />)
+                        data.map((event) => (
+                            <Card
+                                key={event.id}
+                                name={event.name}
+                                link={event.image}
+                            />
+                        ))
                     ) : (
                         <Loader />
                     )}

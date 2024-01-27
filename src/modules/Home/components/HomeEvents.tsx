@@ -3,8 +3,10 @@ import Button from "../../../components/Button";
 import Card from "../../../components/Card";
 import { ArrowBig } from "../../../utils/svgComponents";
 import styles from "../index.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomeEvents = () => {
+    const navigate = useNavigate();
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
     useEffect(() => {
@@ -17,6 +19,7 @@ const HomeEvents = () => {
         // Cleanup the event listener on component unmount
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
     return (
         <div className={styles.eventsContainer}>
             <div className={styles.eventCardContainer}>
@@ -46,11 +49,13 @@ const HomeEvents = () => {
                 </div>
             </div>
             <div className={styles.moreEvents}>
-                <Button
-                    text="EXPLORE EVENTS"
-                    width={isSmallScreen ? "85vw" : "40vw"}
-                    icon={<ArrowBig />}
-                />
+                <Link to="/events">
+                    <Button
+                        text="EXPLORE EVENTS"
+                        width={isSmallScreen ? "85vw" : "40vw"}
+                        icon={<ArrowBig />}
+                    />
+                </Link>
             </div>
         </div>
     );

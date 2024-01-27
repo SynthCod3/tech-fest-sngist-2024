@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./index.module.css";
-import { GiClick } from "react-icons/gi";
 
 const Cards = (props: Event) => {
     const navigate = useNavigate();

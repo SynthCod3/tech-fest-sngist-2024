@@ -6,9 +6,13 @@ import Navbar from "../../components/Navbar";
 import Loader from "../../components/Loader";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
+import Footer from "../../components/Footer";
 
 const Events = () => {
     const [data, setData] = useState<Event[]>([]);
+	const [filter, setFilter] = useState<
+        "all" | "hackathon" | "workshop" | "competition"
+    >("all");
 
     async function fetchData() {
         let { data: events, error } = await supabase.from("events").select("*");
@@ -30,25 +34,34 @@ const Events = () => {
             <Header title="Events" />
             <div className={styles.eventsWrapper}>
                 <div className={styles.filters}>
-                    <Button text="ALL" />
-                    <Button text="HACKATHON" />
-                    <Button text="WORKSHOP" />
-                    <Button text="COMPETITION" />
+                    <Button text="ALL" onClick={() => setFilter("all")} />
+                    <Button text="HACKATHON" onClick={() => setFilter("hackathon")} />
+                    <Button text="WORKSHOP" onClick={() => setFilter("workshop")} />
+                    <Button text="COMPETITION" onClick={() => setFilter("competition")} />
                 </div>
                 <div className={styles.eventContainer}>
                     {data.length > 0 ? (
-                        data.map((event) => (
-                            <Card
-                                key={event.id}
-                                name={event.name}
-                                link={event.image}
-                            />
-                        ))
+                        data.map((event) =>
+                            filter === "all" ? (
+                                <Card
+                                    key={event.id}
+                                    name={event.name}
+                                    link={event.image}
+                                />
+                            ) : filter === event.category ? (
+                                <Card
+                                    key={event.id}
+                                    name={event.name}
+                                    link={event.image}
+                                />
+                            ) : null
+                        )
                     ) : (
                         <Loader />
                     )}
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

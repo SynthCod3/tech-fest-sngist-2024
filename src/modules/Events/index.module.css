@@ -1,3 +1,10 @@
+.eventsWrapper {
+	min-height: calc(100vh - 14rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .filters {
     display: flex;
     flex-wrap: wrap;

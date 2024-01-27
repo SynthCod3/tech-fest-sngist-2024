@@ -3,10 +3,9 @@ import Button from "../../../components/Button";
 import Card from "../../../components/Card";
 import { ArrowBig } from "../../../utils/svgComponents";
 import styles from "../index.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const HomeEvents = () => {
-    const navigate = useNavigate();
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
     useEffect(() => {

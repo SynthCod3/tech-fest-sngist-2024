@@ -19,9 +19,7 @@ const Home = () => {
                     <HeroBgRight className={styles.heroBgRight} />
                 </div>
                 <div className={styles.heroText}>
-                    <span>
-                        WEBSYNC
-                    </span>
+                    <span>WEBSYNC</span>
                 </div>
                 <div>
                     <Countdown targetDate={date} />
@@ -30,10 +28,10 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
-			<div className={styles.eventsWrapper}>
-				<Header title="Events" />
-				<HomeEvents />
-			</div>
+            <div className={styles.eventsWrapper}>
+                <Header title="Events" />
+                <HomeEvents />
+            </div>
             <Footer />
         </div>
     );

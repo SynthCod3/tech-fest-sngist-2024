@@ -13,6 +13,7 @@
     min-height: calc(100vh - 4rem);
     align-items: center;
 	position: relative;
+	background-image: url("/wavebg.svg");
 }
 
 .heroText {
@@ -60,11 +61,6 @@
 	top: 0;
 }
 
-@media screen and (max-width: 600px) {
-	.HeroWrapper {
-		min-height: 500px;
-	}
-}
 
 
 /* Countdown CSS  */
@@ -122,4 +118,17 @@
 	.countdown .number {
 		font-size: 2.5rem;
 	}
+}
+
+
+/* Events Section  */
+
+.eventsWrapper {
+	min-height: 100vh;
+}
+
+.eventsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

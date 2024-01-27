@@ -3,7 +3,7 @@ import styles from "../index.module.css";
 import toast from "react-hot-toast";
 import { supabase } from "../../../utils/supabase";
 import { useNavigate } from "react-router-dom";
-import { HeroBgLeft, HeroBgRight } from "../../Home/components/svgComponents";
+import { HeroBgLeft, HeroBgRight } from "../../../utils/svgComponents";
 
 const SignIn = () => {
     const [data, setData] = useState({

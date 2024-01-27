@@ -1,11 +1,11 @@
 import styles from "./index.module.css";
 import Navbar from "../../components/Navbar";
 import Marquee from "./components/Marquee";
-import { HeroBgLeft, HeroBgRight } from "./components/svgComponents";
-// import { CgMouse } from "react-icons/cg";
+import { HeroBgLeft, HeroBgRight } from "../../utils/svgComponents";
 import Countdown from "./components/Countdown";
 import Footer from "../../components/Footer";
-import ScrambleText from "../../components/ScrambleText";
+import Header from "../../components/Header";
+import HomeEvents from "./components/HomeEvents";
 
 const Home = () => {
     const date = new Date("2024-02-24T12:00:00");
@@ -30,6 +30,10 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
+			<div className={styles.eventsWrapper}>
+				<Header title="Events" />
+				<HomeEvents />
+			</div>
             <Footer />
         </div>
     );

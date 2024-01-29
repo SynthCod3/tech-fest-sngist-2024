@@ -22,6 +22,7 @@ const NavModal = (props: Props) => {
                     <div className={styles.navItems}>
                         {NavItems.map((item) => (
                             <NavCards
+								key={item.index}
                                 text={item.text}
                                 link={item.link}
                                 icon={item.icon}

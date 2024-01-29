@@ -1,7 +1,6 @@
-import { useNavigate } from 'react-router-dom';
-import styles from './index.module.css';
+import { useNavigate } from "react-router-dom";
+import styles from "./index.module.css";
 import { GiClick } from "react-icons/gi";
-
 
 const Cards = (props: Event) => {
     const navigate = useNavigate();
@@ -10,10 +9,10 @@ const Cards = (props: Event) => {
         navigate(`/events/${props.id}`);
     }
 
-  return (
+    return (
         <div className={styles.cardContainer}>
             <div className={styles.imageContainer}>
-                <img src={props.image}   alt="no image avilable"/>
+                <img src={props.image} alt="no image avilable" />
             </div>
             <div className={styles.contentContainer}>
                 <div className={styles.content}>
@@ -21,11 +20,13 @@ const Cards = (props: Event) => {
                     <span>{props.category}</span>
                 </div>
                 <div className={styles.iconContainer}>
-                    <button onClick={handleClick}><GiClick /> <span>VIEW</span></button>
+                    <button onClick={handleClick}>
+                        <span>VIEW</span>
+                    </button>
                 </div>
             </div>
         </div>
-  )
-}
+    );
+};
 
-export default Cards
+export default Cards;

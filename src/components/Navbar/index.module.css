@@ -78,14 +78,14 @@
     position: fixed; /* Fixed position to stay in place */
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-    backdrop-filter: blur(10px); /* Apply blur effect */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 9999; /* Ensure it's above other content */
+
+	background-color: rgba(0, 0, 0, 0.9); /* White background with 50% opacity */
 }
 
 .navModalContents {
@@ -124,16 +124,20 @@
 	flex-direction: column;
 	width: 8rem;
 	height: 8rem;
-	background-color: rgb(135, 135, 135);
+	background-color: var(--primary);
 	border-radius: var(--border-radius);
 	padding: .5rem;
 	text-decoration: none;
 	color: var(--background);
 	justify-content: space-between;
+	border: 2px solid var(--border-light);
 }
 
 .navCard:hover {
-	opacity: .8;
+	background-color: var(--background);
+	border: 2px solid var(--border-light);
+	transition: ease .2s;
+	color: var(--primary);
 }
 
 .navCard span {
@@ -146,8 +150,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
+	font-size: 3rem;
 }	
+
+.navCard div:hover {
+	transform: rotate(25deg);
+	transition: ease-in-out .4s;
+}
 
 .navCard div img {
 	height: auto;

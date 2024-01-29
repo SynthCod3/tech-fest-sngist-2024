@@ -1,6 +1,8 @@
 import { BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import styles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
+import ScrambleText from "../ScrambleText";
+
 const Footer = () => {
 	const navigate = useNavigate();
     return (
@@ -11,17 +13,33 @@ const Footer = () => {
             <div className={styles.footerContent}>
                 <div className={styles.footerLinks}>
                     <b>EVENTS</b>
-                    <a href="">Workshops</a>
-                    <a href="">Hackathon</a>
-                    <a href="">Games</a>
-                    <a href="">Competition</a>
+                    <a href="">
+                        <ScrambleText text="Workshops" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="Hackathons" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="Games" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="Competitions" />
+                    </a>
                 </div>
                 <div className={styles.footerLinks}>
                     <b>ABOUT US</b>
-                    <a href="">Team</a>
-                    <a href="">Teachers</a>
-                    <a href="">College</a>
-                    <a href="">Web devs</a>
+                    <a href="">
+                        <ScrambleText text="Team" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="Teachers" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="College" />
+                    </a>
+                    <a href="">
+                        <ScrambleText text="Web devs" />
+                    </a>
                 </div>
                 <div className={styles.footerLinks}>
                     <b>SOCIAL</b>

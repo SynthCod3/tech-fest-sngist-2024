@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 import styles from "../index.module.css";
+import { IconType } from "react-icons";
+import ScrambleText from "../../ScrambleText";
 
 type Props = {
     text: string;
     link: string;
-    icon: string;
+    icon: IconType;
     index: number;
-	onclick?: () => void
+    onclick?: () => void;
 };
 
 const NavCards = (props: Props) => {
     return (
-        <Link to={props.link} className={styles.navCard} onClick={props.onclick}>
+        <Link
+            to={props.link}
+            className={styles.navCard}
+            onClick={props.onclick}
+        >
             <span>{props.index}</span>
             <div>
-                <img src={props.icon} alt="icon" />
+                <props.icon />
             </div>
-            <b>{props.text}</b>
+            <b><ScrambleText text={props.text} /></b>
         </Link>
     );
 };

@@ -1,7 +1,14 @@
 .eventContainer{
     display: flex;
-    flex-direction: row;
+	flex-wrap: wrap;
     gap:3rem;
     justify-content: center;
-    align-items: baseline;
+}
+
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: end;
+	gap: 1rem;
+	padding: 1rem;
 }

@@ -12,8 +12,8 @@
     width: 100%;
     min-height: calc(100vh - 4rem);
     align-items: center;
-	position: relative;
-	background-image: url("/wavebg.svg");
+    position: relative;
+    background-image: url("/wavebg.svg");
 }
 
 .heroText {
@@ -28,40 +28,38 @@
 
 .heroText span {
     font-size: 28vw;
-	font-family: var(--text-heading);
+    font-family: var(--text-heading);
     font-weight: 600;
 }
 
 .heroText b {
-	font-size: 2.5rem;
-	font-weight: 600;
-	font-family: var(--text-heading);
-	margin-bottom: 5px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--text-heading);
+    margin-bottom: 5px;
 }
 
 .heroText p {
-	font-weight: 200;
-	margin-top: -1px;
+    font-weight: 200;
+    margin-top: -1px;
 }
 
 .marqueeContainer {
-	width: 100%;
-	overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
 .heroBgLeft {
-	position: absolute;
-	left: 18vw;
-	bottom: 0;
+    position: absolute;
+    left: 18vw;
+    bottom: 0;
 }
 
 .heroBgRight {
-	position: absolute;
-	right: 18vw;
-	top: 0;
+    position: absolute;
+    right: 18vw;
+    top: 0;
 }
-
-
 
 /* Countdown CSS  */
 
@@ -69,10 +67,10 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 1rem;
-    padding: .5rem;
+    padding: 0.5rem;
     border: 1px solid var(--foreground);
     margin-top: -2rem;
-	border-radius: var(--border-radius) 0 var(--border-radius) 0;
+    border-radius: var(--border-radius) 0 var(--border-radius) 0;
 }
 
 .countdown {
@@ -85,50 +83,84 @@
 .countdown .number {
     font-family: var(--text-heading);
     font-size: 3rem;
-    margin-bottom: .3rem;
-    margin-top: -.5rem;
+    margin-bottom: 0.3rem;
+    margin-top: -0.5rem;
 }
 
 .countdownWrapper .date {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	padding-left: 1rem;
-	border-left: 1px solid var(--foreground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 1rem;
+    border-left: 1px solid var(--foreground);
 }
 
 .countdownWrapper .date span {
-	font-family: var(--text-heading);
-	font-size: 3rem;
-	margin-top: -8px;
+    font-family: var(--text-heading);
+    font-size: 3rem;
+    margin-top: -8px;
 }
 
 .countdownWrapper .date b {
-	font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 @media screen and (max-width: 600px) {
-	.countdownWrapper .date span {
-		font-size: 2rem;
-	}
-	.countdown {
-		font-size: .7rem;
-	}
-	.countdown .number {
-		font-size: 2.5rem;
-	}
+    .countdownWrapper .date span {
+        font-size: 2rem;
+    }
+    .countdown {
+        font-size: 0.7rem;
+    }
+    .countdown .number {
+        font-size: 2.5rem;
+    }
 }
-
 
 /* Events Section  */
 
 .eventsWrapper {
-	min-height: 100vh;
+    min-height: 100vh;
 }
 
 .eventsContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.eventCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-top: -1.5rem;
+    padding: 1rem 0;
+}
+
+.eventCardContainer .eventCard:first-child,
+.eventCardContainer .eventCard:last-child {
+    scale: 0.8;
+    opacity: 0.8;
+}
+
+.moreEvents {
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .eventCardContainer {
+        margin-top: 0rem;
+		gap: 2rem;
+    }
+    .eventCardContainer .eventCard:first-child,
+    .eventCardContainer .eventCard:last-child {
+        scale: 1;
+        opacity: 1;
+    }
 }

@@ -215,3 +215,19 @@ export const Star = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) =
         />
     </svg>
 );
+
+export const ArrowBig = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+    <svg
+        width={180}
+        height={12}
+        viewBox="0 0 300 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+    >
+        <path
+            d="M299.061 13.0607C299.646 12.4749 299.646 11.5251 299.061 10.9393L289.515 1.3934C288.929 0.807611 287.979 0.807611 287.393 1.3934C286.808 1.97919 286.808 2.92893 287.393 3.51472L295.879 12L287.393 20.4853C286.808 21.0711 286.808 22.0208 287.393 22.6066C287.979 23.1924 288.929 23.1924 289.515 22.6066L299.061 13.0607ZM0 13.5H298V10.5H0V13.5Z"
+            fill="black"
+        />
+    </svg>
+);

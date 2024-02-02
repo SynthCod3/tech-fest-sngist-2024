@@ -1,0 +1,61 @@
+.aboutContainer{
+   display:flex;
+   align-items: center;
+   height:max-content;
+}
+
+.aboutBar{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 1rem;
+    width:40vw;
+}
+
+.aboutBar div{
+    width: 100%;
+    background-color: var(--primary);
+	height: 8vw;
+}
+
+.aboutTitle{
+    font-family: var(--text-heading);
+    font-size: 12rem;
+    display: flex;
+    margin-left: 1rem;
+    margin-right:1rem;
+}
+
+.aboutContact{
+    display: flex;
+    flex-shrink: 1;
+    justify-content: end;
+    width: 40vw;
+    align-items: center;
+    position: relative;
+    margin-left: 1rem;
+    height: 6vw;
+}
+
+.aboutContact div:first-child{
+    background-color: transparent;
+	color: var(--foreground);
+	border: 2px solid var(--foreground);	
+    height:100%;
+    width:100%;
+}
+
+.aboutContact div:last-child{
+    background-color: var(--primary);
+	color: var(--background);
+	position: absolute;
+	left: -8px;
+	top: 8px;
+    height:100%;
+    width:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}

@@ -8,6 +8,7 @@ import SignUp from "./modules/Auth/SignUp";
 import Events from "./modules/Events";
 import Profile from "./modules/Profile";
 import { PrivateRoute } from "./services/PrivateRoute";
+import EventDetails from "./modules/Events/components/EventDetails";
 
 function App() {
     const router = createBrowserRouter([
@@ -35,6 +36,10 @@ function App() {
             path: "/signup",
             element: <SignUp />,
         },
+		{
+			path: "/events/:id",
+			element: <EventDetails />,
+		},
         {
             path: "/",
             element: <PrivateRoute />,

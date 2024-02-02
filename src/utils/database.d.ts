@@ -16,6 +16,8 @@ interface Event {
 	category: string;
     id: string;
     image:string;
+	url:string;
+	paymentQR: string;
 }
 
 interface UserEvent {

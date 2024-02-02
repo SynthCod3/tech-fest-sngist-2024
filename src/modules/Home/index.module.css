@@ -164,3 +164,34 @@
         opacity: 1;
     }
 }
+
+
+.aboutWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: max-content;
+    width:fit-content;
+    margin: 1rem;
+}
+
+.aboutWrapper div:first-child{
+   display: flex;
+   flex-direction: column;
+   gap:1rem;
+}
+
+.aboutWrapper .aboutSeprator{
+   width:0.1rem;
+   height:100%;
+   margin-right:1rem;
+   background-color: var(--primary);
+}
+
+.aboutWrapper div:last-child{
+    margin-left:1rem;
+    display:flex;
+    flex-direction: column;
+    width: fix-content;
+}
+

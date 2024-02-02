@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import HomeEvents from "./components/HomeEvents";
 import AboutTitle from "./components/AboutTitle/AboutTitle";
 import MarqueeComponenet from "./components/MarqueeComponent";
+import Sponsers from "./components/Sponsers/Sponsers";
 
 const Home = () => {
     const date = new Date("2024-02-24T12:00:00");
@@ -30,6 +31,7 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
+           
             <div className={styles.eventsWrapper}>
                 <Header title="Events" />
                 <HomeEvents />
@@ -56,6 +58,10 @@ const Home = () => {
                 </div>
                 <div className={styles.marqueeContainerTwo}>
                     <MarqueeComponenet />
+                </div>
+                <div className={styles.sponsersContainer}>
+                    <Header title="Sponsers" />
+                    <Sponsers />
                 </div>
             </div>
             <Footer />

@@ -1,0 +1,12 @@
+.sponsersWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sponsersWrapper .sponsorsCard{
+    display: flex;
+    flex-direction: column;   
+}
+

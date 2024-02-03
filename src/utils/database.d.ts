@@ -12,12 +12,23 @@ interface UserView {
 
 interface Event {
     name: string;
-	date: number;
-	category: string;
+    date: number;
+    category: string;
     id: string;
-    image:string;
-	url:string;
-	paymentQR: string;
+    image: string;
+    url: string;
+    paymentQR: string;
+    description: string;
+    tagline: string;
+    pool: string;
+    fee: string;
+    end_date: string;
+	coordinators: CoordinatorsType[];
+}
+
+interface CoordinatorsType {
+	name: string;
+	phone: string;
 }
 
 interface UserEvent {

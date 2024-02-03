@@ -14,7 +14,6 @@ import { User } from "@supabase/supabase-js";
 const EventDetails = () => {
     const { id } = useParams();
     const [data, setData] = useState<Event>();
-    const user: User = JSON.parse(localStorage.getItem("user") as string).user;
 
     async function fetchData() {
         let { data: events, error } = await supabase
@@ -46,7 +45,7 @@ const EventDetails = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const register = async () => {
+    const register = async (user: User) => {
         let { data: event_user_link, error } = await supabase
             .from("event_user_link")
             .select("*")
@@ -60,32 +59,37 @@ const EventDetails = () => {
                 .from("event_user_link")
                 .insert([{ event_id: data?.id, user_id: user.id }])
                 .select();
-			if (error) {
-				throw error.message;
-			}
-			if (eventLink) {
-				return "Registered successfully";
-			}
+            if (error) {
+                throw error.message;
+            }
+            if (eventLink) {
+                return "Registered successfully";
+            }
         } else if (event_user_link && event_user_link?.length > 0) {
-			throw "Already Registered";
-		} else if (error) {
-			throw error.message;
-		} else {
-			throw "Something went wrong";
-		}
-
+            throw "Already Registered";
+        } else if (error) {
+            throw error.message;
+        } else {
+            throw "Something went wrong";
+        }
     };
 
     const handleRegister = () => {
-        toast.promise(register(), {
-            loading: "Loading...",
-            success: (response) => {
-                return <b>{response}</b>;
-            },
-            error: (error) => {
-                return <b>{error}</b>;
-            },
-        });
+        const user = JSON.parse(localStorage.getItem("user") as string);
+        if (user) {
+            toast.promise(register(user.user), {
+                loading: "Loading...",
+                success: (response) => {
+                    return <b>{response}</b>;
+                },
+                error: (error) => {
+                    return <b>{error}</b>;
+                },
+            });
+        } else {
+            console.log("Please login to register");
+            toast.error("Please login to register");
+        }
     };
 
     return (

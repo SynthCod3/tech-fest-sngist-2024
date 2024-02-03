@@ -12,12 +12,15 @@ const Profile = () => {
     const navigate = useNavigate();
     const [data, setData] = useState<UserEvent[]>([]);
     const [day, setDay] = useState(1);
-	const [user, setUser] = useState<User>();
+    const [user, setUser] = useState<User>();
 
     const handleLogout = async () => {
         toast.promise(supabase.auth.signOut(), {
             loading: "Logging out...",
-            success: <b>Logout successful.</b>,
+            success: () => {
+                localStorage.clear();
+                return <b>Logout successful.</b>;
+            },
             error: <b>Error logging out</b>,
         });
         navigate("/signin");
@@ -27,9 +30,9 @@ const Profile = () => {
         const {
             data: { user },
         } = await supabase.auth.getUser();
-		if (user) {
-			setUser(user);
-		}
+        if (user) {
+            setUser(user);
+        }
     }
 
     async function fetchData() {
@@ -51,7 +54,7 @@ const Profile = () => {
 
     useEffect(() => {
         fetchData();
-		fetchUser();
+        fetchUser();
     }, []);
 
     return (
@@ -78,9 +81,7 @@ const Profile = () => {
                                 />
                             </div>
                             <div className={styles.cardProfileDetails}>
-                                <b>
-                                    {user.user_metadata.name}
-                                </b>
+                                <b>{user.user_metadata.name}</b>
                                 <span>{user.email}</span>
                             </div>
                         </div>

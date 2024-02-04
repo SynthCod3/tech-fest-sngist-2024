@@ -10,6 +10,7 @@ import EventDetailsInfo from "./components/EventDetails";
 import Button from "../../../../components/Button";
 import toast from "react-hot-toast";
 import { User } from "@supabase/supabase-js";
+import EventRules from "./components/EventRules";
 
 const EventDetails = () => {
     const { id } = useParams();
@@ -121,6 +122,10 @@ const EventDetails = () => {
                                     />
                                 </div>
                             </div>
+                        </div>
+                        {/* rules section  */}
+                        <div className={styles.rulesWrapper}>
+							<EventRules data={data}/>
                         </div>
                     </div>
                 ) : (

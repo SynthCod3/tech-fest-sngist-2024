@@ -32,7 +32,7 @@ const EventDetailsInfo = ({ data }: Props) => {
                 {data.coordinators.map((coordinator) => (
                     <div>
                         <span className={styles.bold}>
-                            {coordinator.name} :
+                            {coordinator.name}:
                         </span>
                         <span className={styles.normal}>
                             {" "}

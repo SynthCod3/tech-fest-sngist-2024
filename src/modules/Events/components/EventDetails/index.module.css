@@ -99,3 +99,12 @@
 		width: 89vw;
 	}
 }
+
+.rulesWrapper {
+	display: flex;
+    padding: 1rem;
+    border: 3px solid var(--border);
+    justify-content: space-between;
+    font-family: monospace;
+	margin: 1.5rem 0;
+}

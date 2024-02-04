@@ -25,6 +25,7 @@ interface Event {
     fee: string;
     end_date: string;
 	coordinators: CoordinatorsType[];
+	rules: string[];
 }
 
 interface CoordinatorsType {

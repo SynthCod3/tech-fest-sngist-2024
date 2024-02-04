@@ -1,18 +1,18 @@
 import toast from "react-hot-toast";
 import { supabase } from "../../utils/supabase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
-import { User } from "@supabase/supabase-js";
 
 const Profile = () => {
+    const { id } = useParams();
     const navigate = useNavigate();
     const [data, setData] = useState<UserEvent[]>([]);
     const [day, setDay] = useState(1);
-    const [user, setUser] = useState<User>();
+    const [user, setUser] = useState<UserView>();
 
     const handleLogout = async () => {
         toast.promise(supabase.auth.signOut(), {
@@ -26,45 +26,52 @@ const Profile = () => {
         navigate("/signin");
     };
 
-    async function fetchUser() {
-        const {
-            data: { user },
-        } = await supabase.auth.getUser();
-        if (user) {
-            setUser(user);
+    async function fetchUser(identifier: string) {
+        let { data: userValue, error } = await supabase
+            .from("user_view")
+            .select("*")
+            .eq("email", identifier);
+        if (userValue) {
+            setUser(userValue[0]);
+            let { data: userData, error } = await supabase
+                .from("event_user_link")
+                .select(
+                    "user_id, event_id, payment, events(name, date, category), user_view(email, raw_user_meta_data)"
+                )
+                // Filters
+                .eq("user_id", userValue[0].id);
+            if (userData) {
+                setData(userData as unknown as UserEvent[]);
+                return user;
+            } else if (error) {
+                toast.error(error.message);
+                throw error;
+            }
         }
-    }
-
-    async function fetchData() {
-        let userId = JSON.parse(localStorage.getItem("user") as string);
-        let { data: user, error } = await supabase
-            .from("event_user_link")
-            .select(
-                "user_id, event_id, payment, events(name, date, category), user_view(email, raw_user_meta_data)"
-            )
-            // Filters
-            .eq("user_id", userId.user.id);
-        if (user) {
-            setData(user as unknown as UserEvent[]);
-            return user;
-        } else if (error) {
+        if (error) {
+            toast.error(error.message);
             throw error;
         }
     }
 
     useEffect(() => {
-        fetchData();
-        fetchUser();
+        fetchUser(
+            id
+                ? id
+                : JSON.parse(localStorage.getItem("user") as string).user.email
+        );
     }, []);
 
     return (
         <>
             <div className={styles.profileWrapper}>
                 <Navbar />
-                <div className={styles.logoutWrapper}>
-                    <div onClick={handleLogout}>Logout</div>
-                </div>
-                {user?.id ? (
+                {!id && (
+                    <div className={styles.logoutWrapper}>
+                        <div onClick={handleLogout}>Logout</div>
+                    </div>
+                )}
+                {data.length > 0 && user ? (
                     <div className={styles.profileCard}>
                         <div className={styles.cardTop}>
                             <span className={styles.cardTopTitle}>
@@ -81,7 +88,7 @@ const Profile = () => {
                                 />
                             </div>
                             <div className={styles.cardProfileDetails}>
-                                <b>{user.user_metadata.name}</b>
+                                <b>{user.raw_user_meta_data.name}</b>
                                 <span>{user.email}</span>
                             </div>
                         </div>

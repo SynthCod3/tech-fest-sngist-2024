@@ -7,6 +7,7 @@ interface UserMetaData {
 
 interface UserView {
     email: string;
+	id: string;
     raw_user_meta_data: UserMetaData;
 }
 

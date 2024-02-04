@@ -40,6 +40,10 @@ function App() {
 			path: "/events/:id",
 			element: <EventDetails />,
 		},
+		{
+			path: "/profile/:id",
+			element: <Profile />,
+		},
         {
             path: "/",
             element: <PrivateRoute />,

@@ -123,11 +123,11 @@ const Profile = () => {
                                                     {index + 1}.{" "}
                                                     {event.events.category} &lt;
                                                     {event.events.name}&gt;
-                                                    <span>
+                                                    {!id &&<span>
                                                         {event.payment
                                                             ? ""
                                                             : " <Payment pending>"}
-                                                    </span>
+                                                    </span>}
                                                 </span>
                                             );
                                         }

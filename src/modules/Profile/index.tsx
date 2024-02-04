@@ -90,6 +90,7 @@ const Profile = () => {
                             <div className={styles.cardProfileDetails}>
                                 <b>{user.raw_user_meta_data.name}</b>
                                 <span>{user.email}</span>
+                                <span>{user.raw_user_meta_data.college}</span>
                             </div>
                         </div>
                         <div className={styles.cardEventsWrapper}>
@@ -123,11 +124,13 @@ const Profile = () => {
                                                     {index + 1}.{" "}
                                                     {event.events.category} &lt;
                                                     {event.events.name}&gt;
-                                                    {!id &&<span>
-                                                        {event.payment
-                                                            ? ""
-                                                            : " <Payment pending>"}
-                                                    </span>}
+                                                    {!id && (
+                                                        <span>
+                                                            {event.payment
+                                                                ? ""
+                                                                : " <Payment pending>"}
+                                                        </span>
+                                                    )}
                                                 </span>
                                             );
                                         }

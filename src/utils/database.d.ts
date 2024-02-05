@@ -7,15 +7,30 @@ interface UserMetaData {
 
 interface UserView {
     email: string;
+	id: string;
     raw_user_meta_data: UserMetaData;
 }
 
 interface Event {
     name: string;
-	date: number;
-	category: string;
+    date: number;
+    category: string;
     id: string;
-    image:string;
+    image: string;
+    url: string;
+    paymentQR: string;
+    description: string;
+    tagline: string;
+    pool: string;
+    fee: string;
+    end_date: string;
+	coordinators: CoordinatorsType[];
+	rules: string[];
+}
+
+interface CoordinatorsType {
+	name: string;
+	phone: string;
 }
 
 interface UserEvent {

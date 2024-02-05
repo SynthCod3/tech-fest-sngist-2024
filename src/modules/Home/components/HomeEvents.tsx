@@ -28,6 +28,7 @@ const HomeEvents = () => {
                         link={
                             "https://i.pinimg.com/originals/4e/89/55/4e8955c4305e7e633a587729b6bbb66c.jpg"
                         }
+                        url={"/hackathon"}
                     />
                 </div>
                 <div className={styles.eventCard}>
@@ -36,6 +37,7 @@ const HomeEvents = () => {
                         link={
                             "https://i.pinimg.com/originals/4e/89/55/4e8955c4305e7e633a587729b6bbb66c.jpg"
                         }
+                        url={"/hackathon"}
                     />
                 </div>
                 <div className={styles.eventCard}>
@@ -44,6 +46,7 @@ const HomeEvents = () => {
                         link={
                             "https://i.pinimg.com/originals/4e/89/55/4e8955c4305e7e633a587729b6bbb66c.jpg"
                         }
+                        url={"/hackathon"}
                     />
                 </div>
             </div>

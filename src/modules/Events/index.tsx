@@ -35,9 +35,18 @@ const Events = () => {
             <div className={styles.eventsWrapper}>
                 <div className={styles.filters}>
                     <Button text="ALL" onClick={() => setFilter("all")} />
-                    <Button text="HACKATHON" onClick={() => setFilter("hackathon")} />
-                    <Button text="WORKSHOP" onClick={() => setFilter("workshop")} />
-                    <Button text="COMPETITION" onClick={() => setFilter("competition")} />
+                    <Button
+                        text="HACKATHON"
+                        onClick={() => setFilter("hackathon")}
+                    />
+                    <Button
+                        text="WORKSHOP"
+                        onClick={() => setFilter("workshop")}
+                    />
+                    <Button
+                        text="COMPETITION"
+                        onClick={() => setFilter("competition")}
+                    />
                 </div>
                 <div className={styles.eventContainer}>
                     {data.length > 0 ? (
@@ -47,12 +56,14 @@ const Events = () => {
                                     key={event.id}
                                     name={event.name}
                                     link={event.image}
+                                    url={event.url}
                                 />
                             ) : filter === event.category ? (
                                 <Card
                                     key={event.id}
                                     name={event.name}
                                     link={event.image}
+                                    url={event.url}
                                 />
                             ) : null
                         )

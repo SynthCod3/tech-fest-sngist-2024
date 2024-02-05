@@ -31,7 +31,10 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
-           
+           <div className={styles.sponsersContainer}>
+                    <AboutTitle title="Sponsers" />
+                    <Sponsers />
+            </div>
             <div className={styles.eventsWrapper}>
                 <Header title="Events" />
                 <HomeEvents />
@@ -59,10 +62,6 @@ const Home = () => {
                 </div>
                 <div className={styles.marqueeContainerTwo}>
                     <MarqueeComponenet />
-                </div>
-                <div className={styles.sponsersContainer}>
-                    <AboutTitle title="Sponsers" />
-                    <Sponsers />
                 </div>
             </div>
             <Footer />

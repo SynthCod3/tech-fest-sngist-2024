@@ -48,16 +48,16 @@ const Home = () => {
                              hey !
                         </span>
                         <span>
-                            we are Westers , a computer science
+                        Welcome to the technological extravaganza at Sree Narayana Guru Institute of Science And Technology! Our annual Techfest is a celebration of innovation, creativity, and a passion for technology.
                         </span>
                         <span>
-                             The Department of Computer Science was established in 1984. The Department aims at upholding the cognitive aspect of education by ensuring academic excellence and intellectual growth of its students. 
+                        Our mission is to inspire, educate, and connect individuals who are driven by a curiosity to explore the limitless realms of technology. From captivating keynote speakers to hands-on workshops, the event is crafted to cater to diverse interests within the vast landscape of science and technology.
                         </span>
                     </div>
                     <div className={styles.aboutSeprator}>
                     </div>
                     <div >
-                        The department lays prime focus on academics interspersed with co-curricular and extra-curricular activities that bring the versatility of its students to the fore and gives them a sound sense of perspective. The faculty comprises of experienced and dedicated teachers who with their expert inputs encourage students to explore new avenues. The computer society “Websters” was started with the aim to foster interest in the world of computers and technology. It provides a platform for like-minded brains to communicate with each other and expand their horizons
+                     At SNIST Techfest, we bring together bright minds, tech enthusiasts, and industry experts to create a platform where ideas flourish and possibilities unfold. With a rich history of fostering talent and igniting curiosity, our Techfest has become a melting pot of cutting-edge advancements and revolutionary breakthroughs.
                     </div>
                 </div>
                 <div className={styles.marqueeContainerTwo}>

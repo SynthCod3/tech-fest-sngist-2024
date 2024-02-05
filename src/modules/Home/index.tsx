@@ -37,7 +37,8 @@ const Home = () => {
                 <HomeEvents />
             </div>
             <div>
-                <AboutTitle/>
+                <AboutTitle
+                title="About"/>
                 <div className={styles.aboutWrapper}>
                     <div>
                         <span>
@@ -60,7 +61,7 @@ const Home = () => {
                     <MarqueeComponenet />
                 </div>
                 <div className={styles.sponsersContainer}>
-                    <Header title="Sponsers" />
+                    <AboutTitle title="Sponsers" />
                     <Sponsers />
                 </div>
             </div>

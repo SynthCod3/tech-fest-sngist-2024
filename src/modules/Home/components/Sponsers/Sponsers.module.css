@@ -2,11 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.sponsersWrapper .sponsorsCard{
+.sponsersWrapper .sponsersCard{
+    flex-direction: row;   
+    gap:4rem;
     display: flex;
-    flex-direction: column;   
+}
+
+@media screen and (max-width: 640px) {
+    .sponsersWrapper .sponsersCard {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
 }
 

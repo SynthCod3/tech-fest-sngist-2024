@@ -1,18 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import styles from "./index.module.css";
+import MarqueeComponenet from "../Home/components/MarqueeComponent";
 
 const NotFound = () => {
     const navigate = useNavigate();
     return (
-        <div>
-            <h1>404</h1>
-            <h2>Page Not Found</h2>
+        <div className={styles.notFoundWrapper}>
+            <div>404 Page Not Found</div>
             <button
                 onClick={() => {
                     navigate("/");
                 }}
             >
-                Home
+               <span>Home</span>
             </button>
+            <div className={styles.marqueeContainerTwo}>
+                    <MarqueeComponenet />
+            </div>
         </div>
     );
 };

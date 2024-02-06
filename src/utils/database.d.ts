@@ -35,6 +35,7 @@ interface CoordinatorsType {
 
 interface UserEvent {
     user_id: string;
+	id: string;
     event_id: string;
 	payment: boolean;
     events: Event;

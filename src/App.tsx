@@ -9,6 +9,7 @@ import Events from "./modules/Events";
 import Profile from "./modules/Profile";
 import { PrivateRoute } from "./services/PrivateRoute";
 import EventDetails from "./modules/Events/components/EventDetails";
+import PaymentStatus from "./modules/Admin/PaymentStatus";
 
 function App() {
     const router = createBrowserRouter([
@@ -51,6 +52,10 @@ function App() {
                 {
                     path: "/profile",
                     element: <Profile />,
+                },
+                {
+                    path: "/payment-status/:id",
+                    element: <PaymentStatus />,
                 },
 
                 // {

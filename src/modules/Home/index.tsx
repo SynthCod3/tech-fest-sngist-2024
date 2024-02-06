@@ -31,31 +31,35 @@ const Home = () => {
                     <Marquee />
                 </div>
             </div>
-           <div className={styles.sponsersContainer}>
-                    <AboutTitle title="Sponsers" />
-                    <Sponsers />
-            </div>
             <div className={styles.eventsWrapper}>
                 <Header title="Events" />
                 <HomeEvents />
             </div>
-            <div>
-                <AboutTitle
-                title="About"/>
+            <div className={styles.sponsersContainer}>
+                <AboutTitle title="SPONSERS" />
+                <Sponsers />
+            </div>
+            {/* <div>
+                <AboutTitle title="About" />
                 <div className={styles.aboutWrapper}>
                     <div>
+                        <span>hey !</span>
                         <span>
-                             hey !
+                            Welcome to the technological extravaganza at Sree
+                            Narayana Guru Institute of Science And Technology!
+                            Our annual Techfest is a celebration of innovation,
+                            creativity, and a passion for technology.
                         </span>
                         <span>
-                        Welcome to the technological extravaganza at Sree Narayana Guru Institute of Science And Technology! Our annual Techfest is a celebration of innovation, creativity, and a passion for technology.
-                        </span>
-                        <span>
-                        Our mission is to inspire, educate, and connect individuals who are driven by a curiosity to explore the limitless realms of technology. From captivating keynote speakers to hands-on workshops, the event is crafted to cater to diverse interests within the vast landscape of science and technology.
+                            Our mission is to inspire, educate, and connect
+                            individuals who are driven by a curiosity to explore
+                            the limitless realms of technology. From captivating
+                            keynote speakers to hands-on workshops, the event is
+                            crafted to cater to diverse interests within the
+                            vast landscape of science and technology.
                         </span>
                     </div>
-                    <div className={styles.aboutSeprator}>
-                    </div>
+                    <div className={styles.aboutSeprator}></div>
                     <div >
                      At SNIST Techfest, we bring together bright minds, tech enthusiasts, and industry experts to create a platform where ideas flourish and possibilities unfold. With a rich history of fostering talent and igniting curiosity, our Techfest has become a melting pot of cutting-edge advancements and revolutionary breakthroughs.
                     </div>
@@ -63,7 +67,7 @@ const Home = () => {
                 <div className={styles.marqueeContainerTwo}>
                     <MarqueeComponenet />
                 </div>
-            </div>
+            </div> */}
             <Footer />
         </div>
     );

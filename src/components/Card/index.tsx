@@ -14,7 +14,7 @@ const Card = (props: Props) => {
     return (
         <div
             onClick={() => {
-                navigate(`/events/${props.url}`);
+                navigate(props.url);
             }}
         >
             <Tilt

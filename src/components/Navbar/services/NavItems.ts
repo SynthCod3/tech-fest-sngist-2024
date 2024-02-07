@@ -1,5 +1,6 @@
 import { FaHome } from "react-icons/fa";
-import { MdContacts, MdEmojiEvents } from "react-icons/md";
+import { MdContacts, MdEmojiEvents, MdPayment } from "react-icons/md";
+import { Roles } from "../../../services/Roles";
 
 export const NavItems = [
     {
@@ -19,5 +20,12 @@ export const NavItems = [
         link: "/contacts",
         icon: MdContacts,
         index: 3,
+    },
+    {
+        text: "Payment-Status",
+        link: "/payment-status",
+        icon: MdPayment,
+        index: 4,
+		roles: [Roles.ADMIN],
     },
 ];

@@ -10,6 +10,9 @@ import Profile from "./modules/Profile";
 import { PrivateRoute } from "./services/PrivateRoute";
 import EventDetails from "./modules/Events/components/EventDetails";
 import PaymentStatus from "./modules/Admin/PaymentStatus";
+import { RoleChecker } from "./services/RoleChecker";
+import { Roles } from "./services/Roles";
+import Admin from "./modules/Admin";
 
 function App() {
     const router = createBrowserRouter([
@@ -37,14 +40,14 @@ function App() {
             path: "/signup",
             element: <SignUp />,
         },
-		{
-			path: "/events/:id",
-			element: <EventDetails />,
-		},
-		{
-			path: "/profile/:id",
-			element: <Profile />,
-		},
+        {
+            path: "/events/:id",
+            element: <EventDetails />,
+        },
+        {
+            path: "/profile/:id",
+            element: <Profile />,
+        },
         {
             path: "/",
             element: <PrivateRoute />,
@@ -54,30 +57,21 @@ function App() {
                     element: <Profile />,
                 },
                 {
-                    path: "/payment-status/:id",
-                    element: <PaymentStatus />,
+                    path: "/",
+                    element: (
+                        <RoleChecker allowedRoles={[Roles.ADMIN]} />
+                    ),
+                    children: [
+                        {
+                            path: "/payment-status",
+                            element: <Admin />,
+                        },
+                        {
+                            path: "/payment-status/:id",
+                            element: <PaymentStatus />,
+                        },
+                    ],
                 },
-
-                // {
-                //     path: "/",
-                //     element: (
-                //         <RoleChecker allowedRoles={[Roles.ADMIN, Roles.DC]} />
-                //     ),
-                //     children: [
-                //         {
-                //             path: "intern",
-                //             element: <InternManagement />,
-                //         },
-                //         {
-                //             path: "intern/:id",
-                //             element: <Dashboard />,
-                //         },
-                //         {
-                //             path: "idea",
-                //             element: <Idea />,
-                //         },
-                //     ],
-                // },
             ],
         },
     ]);

@@ -7,7 +7,6 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import HomeEvents from "./components/HomeEvents";
 import AboutTitle from "./components/AboutTitle/AboutTitle";
-import MarqueeComponenet from "./components/MarqueeComponent";
 import Sponsers from "./components/Sponsers/Sponsers";
 
 const Home = () => {

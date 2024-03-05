@@ -13,6 +13,7 @@ import PaymentStatus from "./modules/Admin/PaymentStatus";
 import { RoleChecker } from "./services/RoleChecker";
 import { Roles } from "./services/Roles";
 import Admin from "./modules/Admin";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
     const router = createBrowserRouter([
@@ -77,7 +78,8 @@ function App() {
     ]);
     return (
         <div className="App">
-            <RouterProvider router={router} />
+			<RouterProvider router={router} />
+			<Analytics />
             <Toaster
                 position="bottom-center"
                 reverseOrder={false}

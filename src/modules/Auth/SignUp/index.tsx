@@ -128,7 +128,7 @@ const SignUp = () => {
                     />
                     <input
                         type="text"
-                        placeholder="college"
+                        placeholder="college/school"
                         onChange={(e) =>
                             setData({ ...data, college: e.target.value })
                         }

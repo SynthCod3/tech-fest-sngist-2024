@@ -23,7 +23,7 @@ const EventDetailsInfo = ({ data }: Props) => {
 					<span className={styles.normal}> ₹{data.fee}</span>
 				</span>
 				<span className={styles.bold}>
-					End Date:
+					Last Date to Register:
 					<span className={styles.normal}> {data.end_date}</span>
 				</span>
 			</div>

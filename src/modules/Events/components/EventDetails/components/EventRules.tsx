@@ -6,7 +6,7 @@ type Props = {
 
 const EventRules = ({ data }: Props) => {
     return (
-        <div>
+        <div className={styles.rulesContainer}>
             <span className={styles.title}>Rules :</span>
             {data.rules.map((rule) => (
                 <ul>

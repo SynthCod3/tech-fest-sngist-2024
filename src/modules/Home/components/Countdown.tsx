@@ -59,8 +59,8 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
                 <span>Seconds</span>
             </div>
 			<div className={styles.date}>
-				<b>February</b>
-				<span>26, 27</span>
+				<b>March</b>
+				<span>21, 22</span>
 			</div>
         </div>
     );

@@ -87,8 +87,8 @@ const EventDetails = () => {
 		}
 	};
 
+	const user = JSON.parse(localStorage.getItem("user") as string);
 	const handleRegister = () => {
-		const user = JSON.parse(localStorage.getItem("user") as string);
 		if (user) {
 			toast.promise(register(user.user), {
 				loading: "Loading...",
@@ -111,6 +111,46 @@ const EventDetails = () => {
 			members: [...formData.members, newMember],
 		});
 		setNewMember("");
+	};
+
+	const checkUserEvent = async (email: string, eventId: string) => {
+		const { data, error } = await supabase.rpc("check_user_event", {
+			p_email: email,
+			p_event_id: eventId,
+		});
+		if (error) {
+			console.error("Error:", error);
+			throw error.message;
+		} else if (data === "No user found") {
+			throw data;
+		} else if (data === "User already registered") {
+			throw data;
+		} else if (data) {
+			return data;
+		}
+	};
+
+	const handleCheckUserEvent = () => {
+		toast.promise(checkUserEvent(newMember, data?.id as string), {
+			loading: "Loading...",
+			success: (response) => {
+				handleAddMember();
+				return <b>{response} has been added!</b>;
+			},
+			error: (error) => {
+				return <b>{error}</b>;
+			},
+		});
+	};
+
+	const handleSubmit = () => {
+		if (formData.members.length > 0) {
+			toast.error("Please add members");
+		} else if (formData.members.length > 5) {
+			toast.error("Maximum 5 members allowed");
+		} else {
+			//write supabase function to insert a row for each member and lead to the event_user_link table
+		}
 	};
 
 	return (
@@ -142,7 +182,30 @@ const EventDetails = () => {
 												isSmallScreen ? "75vw" : "45vw"
 											}
 											onClick={() => {
-												setIsOpen(true);
+												toast.promise(
+													checkUserEvent(
+														user?.user.email as string,
+														data?.id as string
+													),
+													{
+														loading: "Loading...",
+														success: (response) => {
+															setIsOpen(true)
+															return (
+																<b>
+																	{response}{" "}
+																	has been
+																	added!
+																</b>
+															);
+														},
+														error: (error) => {
+															return (
+																<b>{error}</b>
+															);
+														},
+													}
+												);
 											}}
 										/>
 									) : (
@@ -171,6 +234,12 @@ const EventDetails = () => {
 												});
 											}}
 										/>
+										<div
+											className={styles.membersContainer}
+										>
+											Team lead:{" "}
+											{user.user?.user_metadata.name}
+										</div>
 										<div
 											className={styles.membersContainer}
 										>
@@ -221,12 +290,16 @@ const EventDetails = () => {
 													);
 												}}
 											/>
-											<button onClick={handleAddMember}>
+											<button
+												onClick={handleCheckUserEvent}
+											>
 												add
 											</button>
 										</div>
 										<div className={styles.submitButton}>
-											<button>Submit</button>
+											<button onClick={handleSubmit}>
+												Submit
+											</button>
 										</div>
 									</Modal>
 								</div>

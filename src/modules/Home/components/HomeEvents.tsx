@@ -4,33 +4,45 @@ import Card from "../../../components/Card";
 import { ArrowBig } from "../../../utils/svgComponents";
 import styles from "../index.module.css";
 import { Link } from "react-router-dom";
-import pic from "../../../assets/images/gistathon.jpg"
+import pic from "../../../assets/images/gistathon.jpg";
 
 const HomeEvents = () => {
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
+	const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 600);
-        };
+	useEffect(() => {
+		const handleResize = () => {
+			setIsSmallScreen(window.innerWidth < 600);
+		};
 
-        window.addEventListener("resize", handleResize);
+		window.addEventListener("resize", handleResize);
 
-        // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+		// Cleanup the event listener on component unmount
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
-    return (
+	return (
 		<div className={styles.eventsContainer}>
 			<div className={styles.eventCardContainer}>
 				<div className={styles.eventCard}>
-					<Card name={"Hackathon"} link={pic} url={"/hackathon"} />
+					<Card
+						name={"Hackathon"}
+						link={pic}
+						url={"events/hackathon"}
+					/>
 				</div>
 				<div className={styles.eventCard}>
-					<Card name={"Hackathon"} link={pic} url={"/hackathon"} />
+					<Card
+						name={"Hackathon"}
+						link={pic}
+						url={"events/hackathon"}
+					/>
 				</div>
 				<div className={styles.eventCard}>
-					<Card name={"Hackathon"} link={pic} url={"/hackathon"} />
+					<Card
+						name={"Hackathon"}
+						link={pic}
+						url={"events/hackathon"}
+					/>
 				</div>
 			</div>
 			<div className={styles.moreEvents}>

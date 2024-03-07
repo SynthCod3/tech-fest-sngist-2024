@@ -10,7 +10,7 @@ import AboutTitle from "./components/AboutTitle/AboutTitle";
 import Sponsers from "./components/Sponsers/Sponsers";
 
 const Home = () => {
-	const date = new Date("2024-02-24T12:00:00");
+	const date = new Date("2024-03-21T10:00:00");
 
 	return (
 		<div className={styles.HomeWrapper}>
@@ -34,10 +34,10 @@ const Home = () => {
 				<Header title="Events" />
 				<HomeEvents />
 			</div>
-			<div className={styles.sponsersContainer}>
+			{/* <div className={styles.sponsersContainer}>
 				<AboutTitle title="SPONSERS" />
 				<Sponsers />
-			</div>
+			</div> */}
 			{/* <div>
                 <AboutTitle title="About" />
                 <div className={styles.aboutWrapper}>

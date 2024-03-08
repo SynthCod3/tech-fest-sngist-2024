@@ -71,7 +71,7 @@ const Profile = () => {
                         <div onClick={handleLogout}>Logout</div>
                     </div>
                 )}
-                {data.length > 0 && user ? (
+                { user ? (
                     <div className={styles.profileCard}>
                         <div className={styles.cardTop}>
                             <span className={styles.cardTopTitle}>

@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabase";
-import styles from "./index.module.css";
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import Loader from "../../components/Loader";
+import { useState, useEffect } from "react";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Loader from "../../components/Loader";
+import Navbar from "../../components/Navbar";
+import { supabase } from "../../utils/supabase";
+import styles from "../Events/index.module.css";
 
-const Events = () => {
+const Admin = () => {
     const [data, setData] = useState<Event[]>([]);
-	const [filter, setFilter] = useState<
+    const [filter, setFilter] = useState<
         "all" | "hackathon" | "workshop" | "competition"
     >("all");
 
@@ -31,7 +31,7 @@ const Events = () => {
     return (
         <>
             <Navbar />
-            <Header title="Events" />
+            <Header title="Admin" />
             <div className={styles.eventsWrapper}>
                 <div className={styles.filters}>
                     <Button text="ALL" onClick={() => setFilter("all")} />
@@ -56,7 +56,7 @@ const Events = () => {
                                     key={event.id}
                                     name={event.name}
                                     link={event.image}
-                                    url={`/events/${event.url}`}
+                                    url={`/payment-status/${event.id}`}
                                 />
                             ) : filter === event.category ? (
                                 <Card
@@ -77,4 +77,4 @@ const Events = () => {
     );
 };
 
-export default Events;
+export default Admin;

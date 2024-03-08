@@ -16,7 +16,8 @@ const NavCards = (props: Props) => {
         <Link
             to={props.link}
             className={styles.navCard}
-            onClick={props.onclick}
+			onClick={props.onclick}
+			key={props.index}
         >
             <span>{props.index}</span>
             <div>

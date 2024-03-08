@@ -10,33 +10,37 @@ import Profile from "./modules/Profile";
 import { PrivateRoute } from "./services/PrivateRoute";
 import EventDetails from "./modules/Events/components/EventDetails";
 import PaymentStatus from "./modules/Admin/PaymentStatus";
+import { RoleChecker } from "./services/RoleChecker";
+import { Roles } from "./services/Roles";
+import Admin from "./modules/Admin";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
-    const router = createBrowserRouter([
-        {
-            path: "*",
-            element: <NotFound />,
-        },
-        {
-            path: "/404",
-            element: <NotFound />,
-        },
-        {
-            path: "/",
-            element: <Home />,
-        },
-        {
-            path: "/events",
-            element: <Events />,
-        },
-        {
-            path: "/signin",
-            element: <SignIn />,
-        },
-        {
-            path: "/signup",
-            element: <SignUp />,
-        },
+	const router = createBrowserRouter([
+		{
+			path: "*",
+			element: <NotFound />,
+		},
+		{
+			path: "/404",
+			element: <NotFound />,
+		},
+		{
+			path: "/",
+			element: <Home />,
+		},
+		{
+			path: "/events",
+			element: <Events />,
+		},
+		{
+			path: "/signin",
+			element: <SignIn />,
+		},
+		{
+			path: "/signup",
+			element: <SignUp />,
+		},
 		{
 			path: "/events/:id",
 			element: <EventDetails />,
@@ -45,65 +49,58 @@ function App() {
 			path: "/profile/:id",
 			element: <Profile />,
 		},
-        {
-            path: "/",
-            element: <PrivateRoute />,
-            children: [
-                {
-                    path: "/profile",
-                    element: <Profile />,
-                },
-                {
-                    path: "/payment-status/:id",
-                    element: <PaymentStatus />,
-                },
-
-                // {
-                //     path: "/",
-                //     element: (
-                //         <RoleChecker allowedRoles={[Roles.ADMIN, Roles.DC]} />
-                //     ),
-                //     children: [
-                //         {
-                //             path: "intern",
-                //             element: <InternManagement />,
-                //         },
-                //         {
-                //             path: "intern/:id",
-                //             element: <Dashboard />,
-                //         },
-                //         {
-                //             path: "idea",
-                //             element: <Idea />,
-                //         },
-                //     ],
-                // },
-            ],
-        },
-    ]);
-    return (
-        <div className="App">
-            <RouterProvider router={router} />
-            <Toaster
-                position="bottom-center"
-                reverseOrder={false}
-                toastOptions={{
-                    success: {
-                        style: {
-                            background: "var(--border)",
-                            color: "var(--foreground)",
-                        },
-                    },
-					error: {
-						style: {
-							background: "var(--border)",
-							color: "var(--foreground)",
+		{
+			path: "/",
+			element: <PrivateRoute />,
+			children: [
+				{
+					path: "/profile",
+					element: <Profile />,
+				},
+				{
+					path: "/",
+					element: <RoleChecker allowedRoles={[Roles.ADMIN]} />,
+					children: [
+						{
+							path: "/payment-status",
+							element: <Admin />,
 						},
-					}
-                }}
-            />
-        </div>
-    );
+						{
+							path: "/payment-status/:id",
+							element: <PaymentStatus />,
+						},
+					],
+				},
+			],
+		},
+	]);
+	return (
+		<div className="App">
+			<RouterProvider router={router} />
+			<Analytics />
+			<Toaster
+				position="bottom-center"
+				reverseOrder={false}
+				toastOptions={{
+					// success: {
+					// 	style: {
+					// 		background: "var(--border)",
+					// 		color: "var(--foreground)",
+					// 	},
+					// },
+					// error: {
+					// 	style: {
+					// 		background: "var(--border)",
+					// 		color: "var(--foreground)",
+					// 		display: "flex",
+					// 		justifyContent: "center",
+					// 		alignItems: "center",
+					// 	},
+					// },
+				}}
+			/>
+		</div>
+	);
 }
 
 export default App;

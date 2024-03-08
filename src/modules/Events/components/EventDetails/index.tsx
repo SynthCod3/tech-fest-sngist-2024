@@ -190,6 +190,8 @@ const EventDetails = () => {
 	const handleSubmit = async () => {
 		if (formData.members.length === 0) {
 			toast.error("Please add members");
+		} else if (formData.teamName === "") {
+			toast.error("Please add a team name");
 		} else {
 			toast.promise(insertEventUsers(), {
 				loading: "Loading...",

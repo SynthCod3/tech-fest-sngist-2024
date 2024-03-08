@@ -40,7 +40,7 @@ const Navbar = () => {
                 <NavModal isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
             <div className={styles.navMiddle}>
-                {/* <b>AGNIYATHRA &apos;24</b> */}
+                
                 <img
                     src="/logo.svg"
                     width={70}

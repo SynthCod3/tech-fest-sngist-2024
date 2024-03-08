@@ -1,0 +1,43 @@
+.contactWrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem;
+}
+
+.contactTitle{
+    font-family: var(--text-body);
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.contactContent{
+    display:flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    justify-content: center;
+    margin:2rem 0;
+}
+
+.contactCard{
+    height: max-content;
+    padding: 2rem;
+    width:max-content;
+    background-color: rgba(69, 69, 69, 0.447);
+    display:flex;
+    gap:.5rem;
+    font-family: var(--text-body);
+    flex-direction: column;
+    border-radius:15px ;
+}
+
+.contactCard span:first-child{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.contactCard span:nth-child(3){
+    font-size: 1.2rem;
+    font-weight: bold;
+}

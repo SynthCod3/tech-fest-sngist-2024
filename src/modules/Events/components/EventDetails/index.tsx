@@ -165,16 +165,24 @@ const EventDetails = () => {
 		});
 
 		// Insert all rows at once
-		const { data: eventInsert, error } = await supabase.rpc("insert_event_users", {
-			p_emails: rowsToInsert,
-			p_event_id: data?.id,
-			p_team_name: formData.teamName,
-		});
+		const { data: eventInsert, error } = await supabase.rpc(
+			"insert_event_users",
+			{
+				p_emails: rowsToInsert,
+				p_event_id: data?.id,
+				p_team_name: formData.teamName,
+			}
+		);
 		if (error) {
 			console.error("Error:", error);
 			throw error.message;
 		} else {
-			console.log("Rows inserted successfully:", data);
+			setIsOpen(false);
+			setFormData({
+				...formData,
+				members: [],
+				teamName: "",
+			});
 			return eventInsert;
 		}
 	};
@@ -186,16 +194,19 @@ const EventDetails = () => {
 			toast.promise(insertEventUsers(), {
 				loading: "Loading...",
 				success: () => {
+					setIsOpen(false); // Close the modal
+                setFormData({  // Clear the form data
+                    teamName: "",
+                    members: [],
+                });
 					return <b>Registered successfully</b>;
 				},
 				error: (error) => {
 					return <b>{error}</b>;
 				},
-			})
+			});
 		}
 	};
-
-
 
 	return (
 		<>

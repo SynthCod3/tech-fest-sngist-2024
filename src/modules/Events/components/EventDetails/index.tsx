@@ -131,6 +131,16 @@ const EventDetails = () => {
 	};
 
 	const handleCheckUserEvent = () => {
+		if (formData.members.length >= 5 && id === "hackathon") {
+			toast.error("Maximum 5 members allowed");
+			return;
+		}
+
+		// Check if the new member is already in the list
+		if (formData.members.includes(newMember)) {
+			toast.error("Member already added");
+			return;
+		}
 		toast.promise(checkUserEvent(newMember, data?.id as string), {
 			loading: "Loading...",
 			success: (response) => {
@@ -143,15 +153,49 @@ const EventDetails = () => {
 		});
 	};
 
-	const handleSubmit = () => {
-		if (formData.members.length > 0) {
-			toast.error("Please add members");
-		} else if (formData.members.length > 5) {
-			toast.error("Maximum 5 members allowed");
+	const insertEventUsers = async () => {
+		const rowsToInsert = [];
+
+		// Add the leader as the first row
+		rowsToInsert.push(user.user.email);
+
+		// Add each member to the rows array
+		formData.members.forEach((memberEmail) => {
+			rowsToInsert.push(memberEmail);
+		});
+
+		// Insert all rows at once
+		const { data: eventInsert, error } = await supabase.rpc("insert_event_users", {
+			p_emails: rowsToInsert,
+			p_event_id: data?.id,
+			p_team_name: formData.teamName,
+		});
+		if (error) {
+			console.error("Error:", error);
+			throw error.message;
 		} else {
-			//write supabase function to insert a row for each member and lead to the event_user_link table
+			console.log("Rows inserted successfully:", data);
+			return eventInsert;
 		}
 	};
+
+	const handleSubmit = async () => {
+		if (formData.members.length === 0) {
+			toast.error("Please add members");
+		} else {
+			toast.promise(insertEventUsers(), {
+				loading: "Loading...",
+				success: () => {
+					return <b>Registered successfully</b>;
+				},
+				error: (error) => {
+					return <b>{error}</b>;
+				},
+			})
+		}
+	};
+
+
 
 	return (
 		<>
@@ -182,15 +226,23 @@ const EventDetails = () => {
 												isSmallScreen ? "75vw" : "45vw"
 											}
 											onClick={() => {
+												console.log("clicked");
+												if (!user) {
+													toast.error(
+														"Please login to register"
+													);
+													return;
+												}
 												toast.promise(
 													checkUserEvent(
-														user?.user.email as string,
+														user?.user
+															.email as string,
 														data?.id as string
 													),
 													{
 														loading: "Loading...",
 														success: (response) => {
-															setIsOpen(true)
+															setIsOpen(true);
 															return (
 																<b>
 																	{response}{" "}
@@ -238,7 +290,7 @@ const EventDetails = () => {
 											className={styles.membersContainer}
 										>
 											Team lead:{" "}
-											{user.user?.user_metadata.name}
+											{user?.user?.user_metadata.name}
 										</div>
 										<div
 											className={styles.membersContainer}

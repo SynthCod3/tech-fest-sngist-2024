@@ -16,90 +16,91 @@ import Admin from "./modules/Admin";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
-    const router = createBrowserRouter([
-        {
-            path: "*",
-            element: <NotFound />,
-        },
-        {
-            path: "/404",
-            element: <NotFound />,
-        },
-        {
-            path: "/",
-            element: <Home />,
-        },
-        {
-            path: "/events",
-            element: <Events />,
-        },
-        {
-            path: "/signin",
-            element: <SignIn />,
-        },
-        {
-            path: "/signup",
-            element: <SignUp />,
-        },
-        {
-            path: "/events/:id",
-            element: <EventDetails />,
-        },
-        {
-            path: "/profile/:id",
-            element: <Profile />,
-        },
-        {
-            path: "/",
-            element: <PrivateRoute />,
-            children: [
-                {
-                    path: "/profile",
-                    element: <Profile />,
-                },
-                {
-                    path: "/",
-                    element: (
-                        <RoleChecker allowedRoles={[Roles.ADMIN]} />
-                    ),
-                    children: [
-                        {
-                            path: "/payment-status",
-                            element: <Admin />,
-                        },
-                        {
-                            path: "/payment-status/:id",
-                            element: <PaymentStatus />,
-                        },
-                    ],
-                },
-            ],
-        },
-    ]);
-    return (
-        <div className="App">
+	const router = createBrowserRouter([
+		{
+			path: "*",
+			element: <NotFound />,
+		},
+		{
+			path: "/404",
+			element: <NotFound />,
+		},
+		{
+			path: "/",
+			element: <Home />,
+		},
+		{
+			path: "/events",
+			element: <Events />,
+		},
+		{
+			path: "/signin",
+			element: <SignIn />,
+		},
+		{
+			path: "/signup",
+			element: <SignUp />,
+		},
+		{
+			path: "/events/:id",
+			element: <EventDetails />,
+		},
+		{
+			path: "/profile/:id",
+			element: <Profile />,
+		},
+		{
+			path: "/",
+			element: <PrivateRoute />,
+			children: [
+				{
+					path: "/profile",
+					element: <Profile />,
+				},
+				{
+					path: "/",
+					element: <RoleChecker allowedRoles={[Roles.ADMIN]} />,
+					children: [
+						{
+							path: "/payment-status",
+							element: <Admin />,
+						},
+						{
+							path: "/payment-status/:id",
+							element: <PaymentStatus />,
+						},
+					],
+				},
+			],
+		},
+	]);
+	return (
+		<div className="App">
 			<RouterProvider router={router} />
 			<Analytics />
-            <Toaster
-                position="bottom-center"
-                reverseOrder={false}
-                toastOptions={{
-                    success: {
-                        style: {
-                            background: "var(--border)",
-                            color: "var(--foreground)",
-                        },
-                    },
-					error: {
-						style: {
-							background: "var(--border)",
-							color: "var(--foreground)",
-						},
-					}
-                }}
-            />
-        </div>
-    );
+			<Toaster
+				position="bottom-center"
+				reverseOrder={false}
+				toastOptions={{
+					// success: {
+					// 	style: {
+					// 		background: "var(--border)",
+					// 		color: "var(--foreground)",
+					// 	},
+					// },
+					// error: {
+					// 	style: {
+					// 		background: "var(--border)",
+					// 		color: "var(--foreground)",
+					// 		display: "flex",
+					// 		justifyContent: "center",
+					// 		alignItems: "center",
+					// 	},
+					// },
+				}}
+			/>
+		</div>
+	);
 }
 
 export default App;

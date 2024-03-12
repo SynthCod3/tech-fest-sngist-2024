@@ -171,6 +171,7 @@ const EventDetails = () => {
 				p_emails: rowsToInsert,
 				p_event_id: data?.id,
 				p_team_name: formData.teamName,
+				p_free: id === "hackathon" ? true : false,
 			}
 		);
 		if (error) {

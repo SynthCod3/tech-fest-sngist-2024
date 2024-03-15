@@ -74,7 +74,7 @@ const Profile = () => {
 					<div className={styles.profileCard}>
 						<div className={styles.cardTop}>
 							<span className={styles.cardTopTitle}>
-								WEBSYNC &nbsp;
+								AGREYA '24 &nbsp;
 							</span>
 							<hr />
 							<span>&nbsp;ENTRY PASS</span>

@@ -1,22 +1,59 @@
-import LogoCard from "../LogoCard"
 import styles from "./Sponsers.module.css"
+
+import twinkle from "./assets/singlestar.png";
+import fundesign from "./assets/fundesign.png";
+import Mulearn from "./assets/µLearn.png";
+
 
 const Sponsers = () => {
   return (
-    <div className={styles.sponsersWrapper}>
-      <div className={styles.sponsersCard}>
-        <LogoCard
-          image="https://i.ibb.co/jh0vtXs/98015594-removebg-preview.png"
-          company="Mu-Learn"
-        />
-        <LogoCard
-          image="https://learn.mulearn.org/assets/footer/twitter.webp"
-          company="Twitter"
-        />
-        <LogoCard
-          image="https://1000logos.net/wp-content/uploads/2016/11/Google-Symbol.png"
-          company="Google"
-        />
+    <div className={styles.sponsorsLogoWrapper}>
+      <div className={styles.divSponsorsTire}>
+        <div className={styles.companySponsorsDiv}>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>{" "}
+          <a href="https://mulearn.org/" target="_blank">
+            <img src={Mulearn} alt="mulearn" />
+          </a>
+        </div>
+        <div className={styles.twinkleSponsors}>
+          <img src={twinkle} alt="" />
+          <img src={twinkle} alt="" />
+          <img src={twinkle} alt="" />
+        </div>
+      </div>
+      <div className={styles.lineThree} style={{ width: "40%" }}></div>
+      <div className={styles.divSponsorsTire}>
+        <div className={styles.companySponsorsDiv}>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>
+        </div>
+        <div className={styles.twinkleSponsors}>
+          <img src={twinkle} alt="" />
+          <img src={twinkle} alt="" />
+        </div>
+      </div>
+      <div className={styles.lineThree}></div>
+      <div className={styles.divSponsorsTire}>
+        <div className={styles.companySponsorsDiv}>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>
+          <a href="https://fundesign.in/" target="_blank">
+            <img src={fundesign} alt="FUN DESIGN LOGO" />
+          </a>
+        </div>
+        <div className={styles.twinkleSponsors}>
+          <img src={twinkle} alt="" />
+        </div>
       </div>
     </div>
   );

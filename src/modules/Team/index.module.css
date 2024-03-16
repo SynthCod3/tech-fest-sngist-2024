@@ -1,0 +1,172 @@
+.OuterteamWrapper {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.teamWrapper {
+  align-items: center;
+  justify-content: center;
+  background: #171717;
+  width: 85vw;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.remyaSection {
+  display: flex;
+  gap: 5vw;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.remyaSectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "MoriGothic-Semibold";
+}
+.remyaSectionContent > p {
+  font-size: 1.4vw;
+}
+.remyaSectionContent > h2 {
+  color: #e30069;
+  font-size: 2vw;
+  font-family: "NeueMachinaUltrabold";
+}
+
+.containerTeam {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  margin-top: 40px;
+  height: fit-content;
+  gap: 60px;
+}
+
+.box {
+  position: relative;
+  width: calc(68% / 3);
+  height: calc(65% / 3);
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.box > img {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  transition: filter 0.6s all;
+}
+
+.box:hover {
+  background: linear-gradient(128.92deg, #8e0042 0%, #e30069 57.77%);
+}
+
+.nameTagTeam {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  bottom: -24.5%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 47.91%);
+  margin: 0%;
+  height: 50%;
+  width: 100%;
+  font-family: "MoriGothic-Semibold";
+}
+
+.box:hover .nameTagTeam {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nameTeam {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.nameTeam > .nameTeamMember {
+  font-size: 25px;
+}
+.positionTeamMember {
+  font-size: 20px;
+  margin-top: -10px;
+}
+@media screen and (max-width: 1000px) {
+  .containerTeam {
+    gap: 15px;
+    margin-top: 0px;
+  }
+  .box {
+    width: calc(95% / 3);
+    height: calc(100% / 3);
+  }
+  .nameTeam > .nameTeamMember {
+    font-size: 21px;
+  }
+
+  .teamWrapper {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .containerTeam {
+    gap: 10px;
+  }
+  .box {
+    width: calc(95% / 3);
+    height: calc(100% / 3);
+  }
+  .nameTeam > .nameTeamMember {
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .containerTeam {
+    gap: 7px;
+  }
+  .box {
+    width: calc(97% / 2);
+    height: 100%;
+  }
+  .nameTeam > .nameTeamMember {
+    font-size: 16px;
+  }
+  .nameTeam > .positionTeamMembere {
+    font-size: 13px;
+  }
+  .remyaSection {
+    flex-direction: column;
+  }
+  .remyaSectionContent > p {
+    font-size: 18px;
+    margin: 0;
+
+    line-height: 1;
+  }
+  .remyaSectionContent > h2 {
+    font-size: 25px;
+    line-height: 1;
+    margin: 5px;
+  }
+  .remyaSectionContent {
+    gap: 10px;
+  }
+}

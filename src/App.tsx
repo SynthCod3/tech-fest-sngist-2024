@@ -15,6 +15,7 @@ import { Roles } from "./services/Roles";
 import Admin from "./modules/Admin";
 import { Analytics } from "@vercel/analytics/react";
 import Contacts from "./modules/Contacts";
+import Team from "./modules/Team";
 
 function App() {
 	const router = createBrowserRouter([
@@ -53,6 +54,10 @@ function App() {
 		{
 			path: "/profile/:id",
 			element: <Profile />,
+		},
+		{
+			path: "/team",
+			element: <Team />,
 		},
 		{
 			path: "/",

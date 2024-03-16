@@ -25,9 +25,9 @@ const HomeEvents = () => {
 			<div className={styles.eventCardContainer}>
 				<div className={styles.eventCard}>
 					<Card
-						name={"Hackathon"}
-						link={pic}
-						url={"events/hackathon"}
+						name={"Mystery INC"}
+						link={"https://i.ibb.co/qg72PXJ/treasure.jpg"}
+						url={"events/treasurehunt"}
 					/>
 				</div>
 				<div className={styles.eventCard}>
@@ -39,9 +39,9 @@ const HomeEvents = () => {
 				</div>
 				<div className={styles.eventCard}>
 					<Card
-						name={"Hackathon"}
-						link={pic}
-						url={"events/hackathon"}
+						name={"Presentopia"}
+						link={"https://i.ibb.co/qkBWTz5/Presentopia.png"}
+						url={"events/presentation"}
 					/>
 				</div>
 			</div>

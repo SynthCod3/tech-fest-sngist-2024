@@ -41,6 +41,7 @@ const Footer = () => {
 						<ScrambleText text="Web devs" />
 					</a>
 				</div>
+
 				<div className={styles.footerLinks}>
 					<b>SOCIAL</b>
 					<div>
@@ -55,6 +56,25 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
+				{/* <div className={styles.footerLinks}>
+					<b>CONTACT</b>
+					{/* <div>
+					<MailLogoSvg />
+					<a href="mailto:events@mulearn.in">events@mulearn.in</a>
+					</div> 
+					<div>
+						<BsWhatsapp />
+						<a href="tel:+91 79940 43754">
+							<ScrambleText text="+91 79940 43754" />
+						</a>
+					</div>
+					<div>
+						<PhoneLogoSvg />
+						<a href="tel:+91 94007 43624">
+							<ScrambleText text="+91 94007 43624" />
+						</a>
+					</div>
+				</div> */}
 			</div>
 		</div>
 	);

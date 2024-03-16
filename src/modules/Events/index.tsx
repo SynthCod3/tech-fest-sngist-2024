@@ -14,7 +14,7 @@ function useQuery() {
 }
 
 // Define the filter type explicitly for clarity and reuse
-type FilterType = "all" | "hackathon" | "workshop" | "competition";
+type FilterType = "all" | "hackathon" | "workshop" | "competition" | "game";
 
 const Events = () => {
 	const [data, setData] = useState<Event[]>([]);
@@ -24,7 +24,9 @@ const Events = () => {
 	// Ensure urlFilter is a valid FilterType, default to "all" otherwise
 	const [filter, setFilter] = useState<FilterType>(
 		(urlFilter &&
-		["all", "hackathon", "workshop", "competition"].includes(urlFilter)
+		["all", "hackathon", "workshop", "competition", "game"].includes(
+			urlFilter
+		)
 			? urlFilter
 			: "all") as FilterType
 	);
@@ -46,7 +48,9 @@ const Events = () => {
 	useEffect(() => {
 		setFilter(
 			(urlFilter &&
-			["all", "hackathon", "workshop", "competition"].includes(urlFilter)
+			["all", "hackathon", "workshop", "competition", "game"].includes(
+				urlFilter
+			)
 				? urlFilter
 				: "all") as FilterType
 		);
@@ -71,6 +75,7 @@ const Events = () => {
 						text="COMPETITION"
 						onClick={() => setFilter("competition")}
 					/>
+					<Button text="GAME" onClick={() => setFilter("game")} />
 				</div>
 				<div className={styles.eventContainer}>
 					{data.length > 0 ? (

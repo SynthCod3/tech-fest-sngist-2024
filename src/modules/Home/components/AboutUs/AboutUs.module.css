@@ -1,83 +1,79 @@
 .aboutWrapper {
-  background: #171717;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
+	background: #171717;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
 }
 
 .aboutDisplyContentVideo {
-  width: 85vw;
-  padding: 0%;
-  margin: 0%;
-  margin-top: 5.6vw;
-  margin-bottom: 5.6vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  gap: 45px;
+	width: 85vw;
+	padding: 0%;
+	margin: 0%;
+	margin-top: 5.6vw;
+	margin-bottom: 5.6vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	gap: 45px;
 }
 
 .aboutDisplyContentVideo > .displayScreenWrapper {
-  padding: 0%;
-  margin: 0%;
-  position: relative;
+	padding: 0%;
+	margin: 0%;
+	position: relative;
 }
 
 .displayscreen {
-  width: 35vw;
-  height: 23vw;
+	width: 35vw;
+	height: 23vw;
 }
 .logoAbout {
-  position: absolute;
-  top: 0%;
-  left: 1%;
-  width: 34.3vw;
-  height: 23vw;
-  z-index: 1;
+	position: absolute;
+	top: 0%;
+	left: 1%;
+	width: 34.3vw;
+	height: 23vw;
+	z-index: 1;
 }
 .displayScreenContent {
-  font-size: 1.55vw;
-  text-align: justify;
-  font-family: "NeueMachinaRegular";
+	font-size: 1.4vw;
+	text-align: justify;
+	font-family: monospace;
 }
 
-
 @media screen and (max-width: 700px) {
-  
-  .aboutDisplyContentVideo {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .displayScreenWrapper > .displayscreen {
-    width: 80vw;
-    height: 47vw;
-  }
-  .displayScreenWrapper > .logoAbout {
-    width: 78.4vw;
-    height: 47vw;
-    border-radius: 20px;
-
-  }
-  .displayScreenContent {
-    font-size: 17px;
-  }
+	.aboutDisplyContentVideo {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.displayScreenWrapper > .displayscreen {
+		width: 80vw;
+		height: 47vw;
+	}
+	.displayScreenWrapper > .logoAbout {
+		width: 78.4vw;
+		height: 47vw;
+		border-radius: 20px;
+	}
+	.displayScreenContent {
+		font-size: 17px;
+	}
 }
 
 @media screen and (max-width: 500px) {
-  .aboutDisplyContentVideo {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .displayScreenWrapper > .displayscreen {
-    width: 80vw;
-  }
-  .displayScreenWrapper > .logoAbout {
-    width: 78vw;
-  }
-  .displayScreenContent {
-    font-size: 17px;
-  }
-
+	.aboutDisplyContentVideo {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.displayScreenWrapper > .displayscreen {
+		width: 80vw;
+	}
+	.displayScreenWrapper > .logoAbout {
+		width: 78vw;
+	}
+	.displayScreenContent {
+		font-size: 17px;
+	}
 }

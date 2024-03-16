@@ -6,28 +6,41 @@ type Props = {};
 
 export const AboutUs = (_props: Props) => {
   return (
-    <div className={styles.aboutWrapper}>
-      <div className={styles.aboutDisplyContentVideo}>
-        <div className={styles.displayScreenWrapper}>
-          <img className={styles.displayscreen} src={displayscreen} alt="" />
-          <video className={styles.logoAbout} src={promo} autoPlay muted loop/>
-        </div>
-        <div className={styles.displayScreenContent}>
-          <p>
-            <b> CODe Design Week (CDW ‘23)</b> is the first ever design week
-            conducted in engineering colleges. This is a week completely
-            dedicated to design where students from all over Kerala disrupt,
-            imagine, ideate, innovate, and design for a better tomorrow. Our
-            goal is to hand-pick the budding designers, help them in exploring
-            the possibilities, opportunities & finding the passion in design.
-            Students can learn and interact through workshops, panel
-            discussions, keynote speeches, expos and exhibitions, and many more
-            organized as a part of the CODe Design Week (CDW ‘23) where they can
-            listen, and discuss with the industry experts on the future of
-            design.
-          </p>
-        </div>
-      </div>
-    </div>
+		<div className={styles.aboutWrapper}>
+			<div className={styles.aboutDisplyContentVideo}>
+				<div className={styles.displayScreenWrapper}>
+					<img
+						className={styles.displayscreen}
+						src={displayscreen}
+						alt=""
+					/>
+					<video
+						className={styles.logoAbout}
+						src={promo}
+						autoPlay
+						muted
+						loop
+					/>
+				</div>
+				<div className={styles.displayScreenContent}>
+					<p>
+						<b> Agreya 2K24 </b> marks a pivotal moment in the
+						technological calendar, where the brightest minds
+						converge to celebrate innovation, creativity, and the
+						spirit of the digital age. Hosted by the Computer
+						Science & Engineering Department of SNGIST Group of
+						Institutions, in collaboration with Vega, this tech fest
+						is a testament to our shared vision of shaping the
+						future of technology. Over two exhilarating days,
+						participants will have the unique opportunity to dive
+						into a world of tech-driven competitions, workshops, and
+						interactive experiences designed to challenge, inspire,
+						and transform. Agreya is not just an event; it's a
+						movement towards a future where technology and human
+						ingenuity unite to create limitless possibilities.
+					</p>
+				</div>
+			</div>
+		</div>
   );
 };

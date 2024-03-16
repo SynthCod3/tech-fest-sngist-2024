@@ -44,9 +44,9 @@ const EventDetailsInfo = ({ data }: Props) => {
           ))}
         </div>
         <div>
-          <div onClick={handlepayment}>
+          {data.payment && <div onClick={handlepayment}>
             <Button text="Payment QR" />
-          </div>
+          </div>}
           {payment && (
             <div onClick={handlepayment} className={styles.popUpContainer}>
               <img src={data.payment} alt="payment QR" />

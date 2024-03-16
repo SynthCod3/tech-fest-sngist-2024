@@ -135,6 +135,14 @@ const EventDetails = () => {
 			toast.error("Maximum 5 members allowed");
 			return;
 		}
+		if (formData.members.length >= 5 && id === "treasurehunt") {
+			toast.error("Maximum 5 members allowed");
+			return;
+		}
+		if (formData.members.length >= 5 && id === "presentation") {
+			toast.error("Maximum 5 members allowed");
+			return;
+		}
 
 		// Check if the new member is already in the list
 		if (formData.members.includes(newMember)) {
@@ -234,7 +242,9 @@ const EventDetails = () => {
 							<div className={styles.eventDetails}>
 								<EventDetailsInfo data={data} />
 								<div className={styles.buttonContainer}>
-									{id === "hackathon" ? (
+									{id === "hackathon" ||
+									id === "treasurehunt" ||
+									id === "presentation" ? (
 										<Button
 											text="Register"
 											width={

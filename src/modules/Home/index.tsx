@@ -10,8 +10,6 @@ import AboutTitle from "./components/AboutTitle/AboutTitle";
 import Sponsers from "./components/Sponsers/Sponsers";
 import Faq1 from "./components/Faq/FaqContent";
 import { Location } from "./components/Location/Location";
-// import AboutTitle from "./components/AboutTitle/AboutTitle";
-// import Sponsers from "./components/Sponsers/Sponsers";
 
 const Home = () => {
 	const date = new Date("2024-03-21T10:00:00");
@@ -47,39 +45,10 @@ const Home = () => {
 				<Faq1 />
 			</div>
 
-      <div className={styles.sponsersContainer}>
-        <AboutTitle title="Location" />
-        <Location />
-      </div>
-			{/* <div>
-                <AboutTitle title="About" />
-                <div className={styles.aboutWrapper}>
-                    <div>
-                        <span>hey !</span>
-                        <span>
-                            Welcome to the technological extravaganza at Sree
-                            Narayana Guru Institute of Science And Technology!
-                            Our annual Techfest is a celebration of innovation,
-                            creativity, and a passion for technology.
-                        </span>
-                        <span>
-                            Our mission is to inspire, educate, and connect
-                            individuals who are driven by a curiosity to explore
-                            the limitless realms of technology. From captivating
-                            keynote speakers to hands-on workshops, the event is
-                            crafted to cater to diverse interests within the
-                            vast landscape of science and technology.
-                        </span>
-                    </div>
-                    <div className={styles.aboutSeprator}></div>
-                    <div >
-                     At SNIST Techfest, we bring together bright minds, tech enthusiasts, and industry experts to create a platform where ideas flourish and possibilities unfold. With a rich history of fostering talent and igniting curiosity, our Techfest has become a melting pot of cutting-edge advancements and revolutionary breakthroughs.
-                    </div>
-                </div>
-                <div className={styles.marqueeContainerTwo}>
-                    <MarqueeComponenet />
-                </div>
-            </div> */}
+			<div className={styles.sponsersContainer}>
+				<AboutTitle title="LOCATION" />
+				<Location />
+			</div>
 			<Footer />
 		</div>
 	);

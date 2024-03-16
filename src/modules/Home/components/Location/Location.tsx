@@ -1,33 +1,36 @@
 import styles from "./Location.module.css";
-import venueLogo from "./assets/venueLogo.png";
-import card from "./assets/card.png";
-import { MailLogoSvg, PhoneLogoSvg } from "./assets/svg";
+// import card from "./assets/card.png";
+// import { MailLogoSvg, PhoneLogoSvg } from "./assets/svg";
 type Props = {};
 
 export const Location = (_props: Props) => {
-  return (
-    <div id="Venue" className={styles.LocationCard}>
-      <div className={styles.locationWrapper}>
-        <div className={styles.infoContainer}>
-          <img src={venueLogo} alt="" />
-          <div className={styles.infosection}>
-            <h1>Hackathon Venue</h1>
-            <p>
-              SNGIST GROUP OF INSTITUTIONS,<br></br>PockancheryKochi, Vadanappally,
-              <br></br>
-              Kerala - India 680619
-            </p>
-          </div>
-          <a
-            href="https://maps.app.goo.gl/nHamCij7q4oXc8h57"
-            target="_blank"
-            className={styles.atagButton}
-          >
-            VISIT VENUE
-          </a>
-        </div>
-      </div>
-      <div className={styles.bottomWrapper}>
+	return (
+		<div id="Venue" className={styles.LocationCard}>
+			<div className={styles.locationWrapper}>
+				<div className={styles.infoContainer}>
+					<img
+						src="/sngist.png"
+						alt="Logo"
+					/>
+					<div className={styles.infosection}>
+						<h1>Techfest Venue</h1>
+						<p>
+							SNGIST GROUP OF INSTITUTIONS,<br></br>N. Paravur,
+							Manjali,
+							<br></br>
+							Kerala - India 680619
+						</p>
+					</div>
+					<a
+						href="https://maps.app.goo.gl/nHamCij7q4oXc8h57"
+						target="_blank"
+						className={styles.atagButton}
+					>
+						VISIT VENUE
+					</a>
+				</div>
+			</div>
+			{/* <div className={styles.bottomWrapper}>
         <div className={styles.cardWrapper}>
           <img src={card} alt="" />
           <div>
@@ -59,7 +62,7 @@ export const Location = (_props: Props) => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+      </div> */}
+		</div>
+	);
 };

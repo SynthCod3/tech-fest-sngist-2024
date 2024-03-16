@@ -14,6 +14,7 @@ import { RoleChecker } from "./services/RoleChecker";
 import { Roles } from "./services/Roles";
 import Admin from "./modules/Admin";
 import { Analytics } from "@vercel/analytics/react";
+import Contacts from "./modules/Contacts";
 
 function App() {
 	const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
 		{
 			path: "/signup",
 			element: <SignUp />,
+		},
+		{
+			path: "/contacts",
+			element: <Contacts />,
 		},
 		{
 			path: "/events/:id",

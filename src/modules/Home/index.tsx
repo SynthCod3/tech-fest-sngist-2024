@@ -6,6 +6,8 @@ import Countdown from "./components/Countdown";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import HomeEvents from "./components/HomeEvents";
+import AboutTitle from "./components/AboutTitle/AboutTitle";
+import Sponsers from "./components/Sponsers/Sponsers";
 // import AboutTitle from "./components/AboutTitle/AboutTitle";
 // import Sponsers from "./components/Sponsers/Sponsers";
 
@@ -34,10 +36,10 @@ const Home = () => {
 				<Header title="Events" />
 				<HomeEvents />
 			</div>
-			{/* <div className={styles.sponsersContainer}>
+			<div className={styles.sponsersContainer}>
 				<AboutTitle title="SPONSERS" />
 				<Sponsers />
-			</div> */}
+			</div>
 			{/* <div>
                 <AboutTitle title="About" />
                 <div className={styles.aboutWrapper}>

@@ -1,20 +1,75 @@
-.sponsersWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sponsorsLogoWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+  width: 100%;
+  gap: 2vw;
+  align-self: center;
+  align-items: center;
 }
 
-.sponsersWrapper .sponsersCard{
-    flex-direction: row;   
-    gap:4rem;
-    display: flex;
+.divSponsorsTire {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0%;
+  margin: 0%;
+  width: 80%;
 }
 
-@media screen and (max-width: 640px) {
-    .sponsersWrapper .sponsersCard {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
+.companySponsorsDiv {
+  display: flex;
+  align-items: center;
+  gap: 5%;
 }
 
+.companySponsorsDiv > a > img {
+  max-width: 15vw;
+  height: 6vw;
+  object-fit: contain;
+  cursor: pointer;
+}
+.twinkleSponsors {
+  display: flex;
+  background: transparent;
+  align-self: center;
+  justify-self: right;
+}
+.twinkleSponsors > img {
+  width: 3.5vw;
+}
+
+.lineThree {
+  height: 1px;
+  width: 50%;
+  background-color: #888888;
+  align-self: flex-start;
+  margin-left: 10vw;
+}
+
+@media screen and (max-width: 630px) {
+  .contactsWrapper > .headingTeam {
+    font-size: 30px;
+  }
+
+  .companySponsorsDiv > a > img {
+    max-width: 18vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sponsorsLogoWrapper {
+    gap: 2vh;
+  }
+  .divSponsorsTire {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .twinkleSponsors > img {
+    width: 6.5vw;
+  }
+
+  .lineThree {
+    display: none;
+  }
+}

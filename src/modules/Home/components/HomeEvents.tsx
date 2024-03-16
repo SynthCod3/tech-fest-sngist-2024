@@ -4,7 +4,6 @@ import Card from "../../../components/Card";
 import { ArrowBig } from "../../../utils/svgComponents";
 import styles from "../index.module.css";
 import { Link } from "react-router-dom";
-import pic from "../../../assets/images/gistathon.jpg";
 
 const HomeEvents = () => {
 	const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);

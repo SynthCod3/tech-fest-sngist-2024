@@ -40,7 +40,6 @@ const Home = () => {
 			</div>
 
 			<div className={styles.sponsersContainer}>
-				{/* <AboutTitle title="PARTNERS" /> */}
 				<Partners />
 			</div>
 			<div className={styles.eventsWrapper}>

@@ -18,7 +18,7 @@ interface Event {
     id: string;
     image: string;
     url: string;
-    paymentQR: string;
+    payment: string;
     description: string;
     tagline: string;
     pool: string;

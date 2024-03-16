@@ -1,5 +1,6 @@
 import Button from "../../../../../components/Button";
 import styles from "../index.module.css";
+import * as Popover from "@radix-ui/react-popover";
 
 type Props = {
 	data: Event;
@@ -44,9 +45,19 @@ const EventDetailsInfo = ({ data }: Props) => {
 					))}
 				</div>
 				<div>
-					<Button
-						text="Payment QR"
-					/>
+					<Popover.Root>
+						<Popover.Trigger className={styles.popUpContainer}>
+							<Button text="Payment QR" />
+						</Popover.Trigger>
+						<Popover.Anchor />
+						<Popover.Portal>
+							<Popover.Content>
+								<div className={styles.popUpContainer}>
+									<img src={data.payment} alt="payment QR" />
+								</div>
+							</Popover.Content>
+						</Popover.Portal>
+					</Popover.Root>
 				</div>
 			</div>
 		</>

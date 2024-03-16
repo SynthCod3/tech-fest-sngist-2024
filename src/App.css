@@ -23,6 +23,11 @@
 	--inter: 'Inter', sans-serif;
 	--chakra: 'Chakra Petch', sans-serif;
 }
+* {
+  scroll-behavior: smooth;
+
+  box-sizing: border-box;
+}
 
 html, body {
 	padding: 0;

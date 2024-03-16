@@ -9,6 +9,7 @@ import HomeEvents from "./components/HomeEvents";
 import AboutTitle from "./components/AboutTitle/AboutTitle";
 import Sponsers from "./components/Sponsers/Sponsers";
 import Faq1 from "./components/Faq/FaqContent";
+import { Location } from "./components/Location/Location";
 // import AboutTitle from "./components/AboutTitle/AboutTitle";
 // import Sponsers from "./components/Sponsers/Sponsers";
 
@@ -45,6 +46,11 @@ const Home = () => {
 				<Header title="FAQ" />
 				<Faq1 />
 			</div>
+
+      <div className={styles.sponsersContainer}>
+        <AboutTitle title="Location" />
+        <Location />
+      </div>
 			{/* <div>
                 <AboutTitle title="About" />
                 <div className={styles.aboutWrapper}>

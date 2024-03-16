@@ -171,6 +171,7 @@ const EventDetails = () => {
 				p_emails: rowsToInsert,
 				p_event_id: data?.id,
 				p_team_name: formData.teamName,
+				p_free: id === "hackathon" ? true : false,
 			}
 		);
 		if (error) {
@@ -197,10 +198,11 @@ const EventDetails = () => {
 				loading: "Loading...",
 				success: () => {
 					setIsOpen(false); // Close the modal
-                setFormData({  // Clear the form data
-                    teamName: "",
-                    members: [],
-                });
+					setFormData({
+						// Clear the form data
+						teamName: "",
+						members: [],
+					});
 					return <b>Registered successfully</b>;
 				},
 				error: (error) => {
@@ -236,7 +238,9 @@ const EventDetails = () => {
 										<Button
 											text="Register"
 											width={
-												isSmallScreen ? "75vw" : "45vw"
+												isSmallScreen
+													? "75vw"
+													: "40.5vw"
 											}
 											onClick={() => {
 												console.log("clicked");
@@ -277,7 +281,9 @@ const EventDetails = () => {
 										<Button
 											text="Register"
 											width={
-												isSmallScreen ? "75vw" : "45vw"
+												isSmallScreen
+													? "75vw"
+													: "40.5vw"
 											}
 											onClick={handleRegister}
 										/>

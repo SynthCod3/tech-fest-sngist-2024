@@ -1,18 +1,38 @@
 [
     {
-      "post": "Manager",
-      "name": "John Doe",
-      "phone": "1234567890"
+      "post": "Event Coordinator",
+      "name": "Jenin Joseph",
+      "phone": "8848687988"
     },
     {
-      "post": "Developer",
-      "name": "Jane Smith",
-      "phone": "9876543210"
+      "post": "Finance Coordinator",
+      "name": "Alan K Anil",
+      "phone": "9946892274"
     },
     {
-      "post": "Designer",
-      "name": "Bob Johnson",
-      "phone": "1122334455"
+      "post": "Marketing Coordinator",
+      "name": "Hashim Ayoob",
+      "phone": "9995693679"
+    },
+    {
+      "post": "Volunteer Coordinator",
+      "name": "Farooq Jaleel",
+      "phone": "7025867093"
+    },
+    {
+      "post": "Sponsorship Coordinator",
+      "name": "Edwin Benny",
+      "phone": "8301032383"
+    },
+    {
+      "post": "Program Coordinator",
+      "name": "Anulakshmi Shibu",
+      "phone": "9778014026"
+    },
+    {
+      "post": "Hospitality Coordinator",
+      "name": "Ashna Manoj",
+      "phone": "9808695792"
     }
   ]
   

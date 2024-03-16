@@ -11,9 +11,9 @@ const Sponsers = () => {
 					<a href="https://iedc.sngist.org/" target="_blank">
 						<img src="/iedc.png" alt="IEDC SNGIST Logo" />
 					</a>{" "}
-					{/* <a href="https://mulearn.org/" target="_blank">
-						<img src={Mulearn} alt="mulearn" />
-					</a> */}
+					<a href="https://mulearn.org/" target="_blank">
+						<img src="/vega.png" alt="vega" />
+					</a>
 				</div>
 				<div className={styles.twinkleSponsors}>
 					<img src={twinkle} alt="" />

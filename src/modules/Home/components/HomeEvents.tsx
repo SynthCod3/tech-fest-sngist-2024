@@ -33,7 +33,7 @@ const HomeEvents = () => {
 				<div className={styles.eventCard}>
 					<Card
 						name={"Hackathon"}
-						link={pic}
+						link="https://i.ibb.co/R4tg3C8/Instagram-post-6.webp"
 						url={"events/hackathon"}
 					/>
 				</div>

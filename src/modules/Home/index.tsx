@@ -11,6 +11,7 @@ import Sponsers from "./components/Sponsers/Sponsers";
 import Faq1 from "./components/Faq/FaqContent";
 import { Location } from "./components/Location/Location";
 import { AboutUs } from "./components/AboutUs/AboutUs";
+import { Partners } from "./components/Partners/Partners";
 
 const Home = () => {
 	const date = new Date("2024-03-21T10:00:00");
@@ -36,6 +37,11 @@ const Home = () => {
       <div className={styles.sponsersContainer}>
         <AboutTitle title="About Us" />
         <AboutUs />
+      </div>
+
+      <div className={styles.sponsersContainer}>
+        <AboutTitle title="Partners" />
+        <Partners />
       </div>
       <div className={styles.eventsWrapper}>
         <Header title="Events" />

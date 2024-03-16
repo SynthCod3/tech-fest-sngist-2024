@@ -1,0 +1,17 @@
+.Wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+    padding:0px 5vw;
+}
+.Wrapper a{
+    width: calc(100%/2 -20px);
+}
+.Wrapper img{
+    width: 100%;
+    max-width: 400px;
+}

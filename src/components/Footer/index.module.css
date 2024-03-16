@@ -1,68 +1,102 @@
 .footerWrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1.5rem;
-	background-color: var(--foreground);
-	color: var(--background);
-	font-family: var(--inter);
-	gap: 2rem;
-	padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  font-family: var(--inter);
+  gap: 2rem;
+  padding-bottom: 3rem;
 }
 
 .logoContainer {
-	display: flex;
-	width: 100%;
-	justify-content: start;
+  display: flex;
+  width: 100%;
+  justify-content: start;
 }
 
 .logoContainer img {
-	width: 3.5rem;
-	mix-blend-mode: difference !important;
-	cursor: pointer;
+  width: 3.5rem;
+  mix-blend-mode: difference !important;
+  cursor: pointer;
 }
 
 .footerContent {
-	display: flex;
-	justify-content: start;
-	flex-wrap: wrap;
-	width: 95%;
-	gap: 3rem;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 95%;
+  gap: 2rem 3rem;
 }
 
 .footerContent .footerLinks {
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	gap: 0.2rem;
-	align-items: start;
-	width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 0.2rem;
+  align-items: start;
+  width: 100px;
 }
 
 .footerContent .footerLinks b {
-	font-size: 1.1rem;
-	font-weight: 800;
-	margin-bottom: .4rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
 }
 
 .footerContent .footerLinks a {
-	text-decoration: none;
-	color: var(--accent);
+  text-decoration: none;
+  color: var(--accent);
 }
 
 .footerLinks a:hover {
-	text-decoration: underline;
-	color: var(--background);
+  text-decoration: underline;
+  color: var(--background);
 }
 
 .footerLinks div {
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
-	font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.2rem;
 }
 
 .footerLinks div a:last-child {
-	margin-right: 20vw;
+  margin-right: 20vw;
+}
+
+.contactWrapper {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.contactWrapper b {
+  margin: 0;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.innerContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
+}
+.innerContentWrapper > div {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+}
+
+.innerContentWrapper a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
 }

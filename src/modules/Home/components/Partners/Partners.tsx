@@ -3,8 +3,6 @@ import fundesign from './assets/fundesign.png'
 import creative from './assets/Creartive.png'
 import mulearn from './assets/µLearn.png'
 
-type Props = {}
-
 export const Partners = () => {
 	return (
 		<div className={styles.Wrapper}>

@@ -13,7 +13,10 @@ export const Partners = () => {
 				<a href="https://fundesign.in" target="_blank">
 					<img src={fundesign} alt="" />
 				</a>{" "}
-				<a href="https://fundesign.in" target="_blank">
+				<a
+					href="https://www.instagram.com/creartive_96?igsh=Y3BldW5zdzVnMHB6"
+					target="_blank"
+				>
 					<img src={creative} alt="" />
 				</a>
 				<a href="https://mulearn.org" target="_blank">

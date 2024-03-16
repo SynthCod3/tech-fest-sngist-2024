@@ -1,3 +1,4 @@
+import Button from "../../../../../components/Button";
 import styles from "../index.module.css";
 
 type Props = {
@@ -27,17 +28,26 @@ const EventDetailsInfo = ({ data }: Props) => {
 					<span className={styles.normal}> {data.end_date}</span>
 				</span>
 			</div>
-			<div className={styles.detailsContainer}>
-				<span className={styles.title}>Coodinator Details</span>
-				{data.coordinators.map((coordinator) => (
-					<div>
-						<span className={styles.bold}>{coordinator.name}:</span>
-						<span className={styles.normal}>
-							{" "}
-							{coordinator.phone}
-						</span>
-					</div>
-				))}
+			<div className={styles.bottomWrapperCard}>
+				<div className={styles.detailsContainer}>
+					<span className={styles.title}>Coodinator Details</span>
+					{data.coordinators.map((coordinator) => (
+						<div>
+							<span className={styles.bold}>
+								{coordinator.name}:
+							</span>
+							<span className={styles.normal}>
+								{" "}
+								{coordinator.phone}
+							</span>
+						</div>
+					))}
+				</div>
+				<div>
+					<Button
+						text="Payment QR"
+					/>
+				</div>
 			</div>
 		</>
 	);

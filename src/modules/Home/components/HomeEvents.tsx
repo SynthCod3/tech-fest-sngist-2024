@@ -40,7 +40,7 @@ const HomeEvents = () => {
 					<Card
 						name={"Presentopia"}
 						link={"https://i.ibb.co/qkBWTz5/Presentopia.png"}
-						url={"events/presentation"}
+						url={"events/presentopia"}
 					/>
 				</div>
 			</div>

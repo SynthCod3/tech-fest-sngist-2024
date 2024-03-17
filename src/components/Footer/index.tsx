@@ -45,10 +45,10 @@ const Footer = () => {
 				<div className={styles.footerLinks}>
 					<b>SOCIAL</b>
 					<div>
-						<a href="">
+						<a href="https://www.linkedin.com/in/sngist-cse-7a29552ba/ ">
 							<BsLinkedin />
 						</a>
-						<a href="">
+						<a href="https://www.instagram.com/sngist_cse/">
 							<BsInstagram />
 						</a>
 						<a href="">

@@ -100,7 +100,6 @@ const EventDetails = () => {
 				},
 			});
 		} else {
-			console.log("Please login to register");
 			toast.error("Please login to register");
 		}
 	};
@@ -119,7 +118,6 @@ const EventDetails = () => {
 			p_event_id: eventId,
 		});
 		if (error) {
-			console.error("Error:", error);
 			throw error.message;
 		} else if (data === "No user found") {
 			throw data;
@@ -131,16 +129,24 @@ const EventDetails = () => {
 	};
 
 	const handleCheckUserEvent = () => {
-		if (formData.members.length >= 5 && id === "hackathon") {
+		if (formData.members.length >= 4 && id === "hackathon") {
 			toast.error("Maximum 5 members allowed");
 			return;
 		}
-		if (formData.members.length >= 5 && id === "treasurehunt") {
+		if (formData.members.length >= 4 && id === "treasurehunt") {
 			toast.error("Maximum 5 members allowed");
 			return;
 		}
-		if (formData.members.length >= 5 && id === "presentation") {
+		if (formData.members.length >= 4 && id === "presentopia") {
 			toast.error("Maximum 5 members allowed");
+			return;
+		}
+		if (formData.members.length >= 1 && id === "apryceinblood") {
+			toast.error("Maximum 2 members allowed");
+			return;
+		}
+		if (formData.members.length >= 1 && id === "date") {
+			toast.error("Maximum 2 members allowed");
 			return;
 		}
 
@@ -183,7 +189,6 @@ const EventDetails = () => {
 			}
 		);
 		if (error) {
-			console.error("Error:", error);
 			throw error.message;
 		} else {
 			setIsOpen(false);
@@ -244,7 +249,9 @@ const EventDetails = () => {
 								<div className={styles.buttonContainer}>
 									{id === "hackathon" ||
 									id === "treasurehunt" ||
-									id === "presentation" ? (
+									id === "presentopia" ||
+									id === "apryceinblood" ||
+									id === "date" ? (
 										<Button
 											text="Register"
 											width={
@@ -253,7 +260,6 @@ const EventDetails = () => {
 													: "40.5vw"
 											}
 											onClick={() => {
-												console.log("clicked");
 												if (!user) {
 													toast.error(
 														"Please login to register"

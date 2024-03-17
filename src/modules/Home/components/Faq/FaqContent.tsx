@@ -7,31 +7,36 @@ import Faq from "./Faq";
 const Faq1 = () => {
   const [openIndex, setOpenIndex] = useState(-1);
   const faqArray = [
-    {
-      heading: "What is the maximum team size allowed?",
-      para: "Teams can consist of 2 to 4 members for participation in the hackathon.",
-    },
-    {
-      heading: "Is there a registration fee for the hackathon?",
-      para: "Registration is entirely free of charge. No fees are required for participation.",
-    },
-    {
-      heading: "Can we work on pre-existing projects?",
-      para: "No, participants are strictly required to develop a prototype within a 24-hour timeframe, based on the problem statements provided.",
-    },
-    {
-      heading: "How can I qualify for participation?",
-      para: "The hackathon follows a two-phase structure. Participants who successfully clear the first online phase will have the opportunity to participate in the subsequent offline hackathon. Problem statements for the first phase will be released on October 22nd. Your performance in this phase will determine your eligibility for entry into the final offline hackathon.",
-    },
-    {
-      heading: "Who's eligible to dive into this hackathon adventure?",
-      para: "This hackathon is open to all the brilliant minds out there, whether you're currently a student or a seasoned graduate.",
-    },
-    {
-      heading: "What benefits await you in this coding extravaganza?",
-      para: "Participating here means diving into real-world tech challenges, expanding your network with fellow tech enthusiasts and mentors, honing your coding and problem-solving skills, and unlocking a world of limitless opportunities for your tech future. It's not just a hackathon; it's a ticket to tech excellence.",
-    },
-  ];
+    
+      {
+        "heading": "What is Agreya and its objectives?",
+        "para": "Agreya is an annual tech fest. Its objectives include promoting innovation, fostering collaboration, and showcasing talent in various fields of technology."
+      },
+      {
+        "heading": "How to register for events",
+        "para": "Sign in to the website and click on the 'event register' button."
+      },
+      {
+        "heading": "How to make payment?",
+        "para": "On the corresponding event page, there is a button called 'make QR Payment.' Click on it, scan the QR code for payment."
+      },
+      {
+        "heading": "Why does the profile show 'payment pending' after being paid?",
+        "para": "It is because of the verification process. If the payment status is pending even after 6 hours, contact the event coordinators."
+      },
+      {
+        "heading": "Does every event have spot registration?",
+        "para": "All events except the hackathon have spot registration."
+      },
+      {
+        "heading": "How to add team members?",
+        "para": "Ensure all members are registered. The team leader should register for the event and add his team members."
+      },
+      {
+        "heading": "How can I sponsor or partner with Agreya?",
+        "para": "If you're interested in sponsoring or partnering with Agreya, please contact our sponsorship team for more information."
+      }
+    ]
 
   return (
     <div id="FAQs" className={styles.faqWrapper}>

@@ -1,14 +1,15 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import styles from "./index.module.css";
+import jenin from "./assets/jenin.png"; 
 import amalcp from "./assets/amalcp.png";
 
 const Team = () => {
   const data = [
     {
-      image: amalcp,
-      name: "Amal C P",
-      designation: "President",
+      image: jenin,
+      name: "Jenin Joseph",
+      designation: "Convener",
     },
     {
       image: amalcp,
